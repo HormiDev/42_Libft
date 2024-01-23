@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int a)
+int	ft_toupper(int c)
 {
-	if (a >= 97 && a <= 122)
-		return (a = a - 32);
-	return (a);
+	if (c >= 97 && c <= 122)
+		return (c = c - 32);
+	return (c);
 }
 /*
 #include <unistd.h>

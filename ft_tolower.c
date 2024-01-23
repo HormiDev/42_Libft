@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int a)
+int	ft_tolower(int c)
 {
-	if (a >= 65 && a <= 90)
-		return (a = a + 32);
-	return (a);
+	if (c >= 65 && c <= 90)
+		return (c = c + 32);
+	return (c);
 }
 /*
 #include <unistd.h>

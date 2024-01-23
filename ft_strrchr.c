@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *str, int a)
+char	*ft_strrchr(const char *str, int c)
 {
 	char	*resultado;
 
 	resultado = 0;
 	while (*str != '\0')
 	{
-		if (*str == a)
+		if (*str == c)
 			resultado = ((char *)str);
 		str++;
 	}
