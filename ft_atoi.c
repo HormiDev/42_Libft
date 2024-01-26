@@ -12,18 +12,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	num;
-	int	cont;
-
-	cont = 0;
-	num = 0;
-	if (str[cont])
-	while (str[cont] =! 0)
-	{
-
-	}
+	return (0);
 }
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -50,3 +41,4 @@ int main() {
 
     return 0;
 }
+*/

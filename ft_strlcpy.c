@@ -30,21 +30,20 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (cont);
 }
-/*
+
 #include <string.h>
 
 int main() {
-    char src[50] = "Hola, mundo!";
+    char src[50] = "aaa";
     char dst[5];
     char dst2[5];
     size_t ret1, ret2;
 
-    ret1 = strlcpy(dst, src, sizeof(dst));
+    ret1 = strlcpy(dst, src, 0);
     printf("strlcpy returned: %zu, Result: %s\n", ret1, dst);
 
-    ret2 = ft_strlcpy(dst2, src, sizeof(dst2));
+    ret2 = ft_strlcpy(dst2, src, 0);
     printf("ft_strlcpy returned: %zu, Result: %s\n", ret2, dst2);
 
     return 0;
 }
-*/
