@@ -1,6 +1,6 @@
 ## 42_Libft
 
-#Bienvenido a 42_Libft, mi biblioteca de C creada como parte del primer proyecto de Campus 42.
+# Bienvenido a 42_Libft, mi biblioteca de C creada como parte del primer proyecto de Campus 42.
 
 Las funciones que he implementado son:
 
