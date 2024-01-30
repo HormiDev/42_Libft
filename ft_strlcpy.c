@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 17:47:23 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/29 20:41:47 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/01/30 01:41:44 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	{
 		srclen++;
 	}
-	if (dstsize == 0)
-	{
-		dst[0] = 0;
-		return (srclen);
-	}
-	while (cont < srclen && cont < dstsize - 1)
-	{
-		dst[cont] = src[cont];
-		cont++;
-	}
-	dst[cont] = 0;
+	if (dstsize > 0)
+	{	
+		while (cont < srclen && cont < dstsize - 1)
+		{
+			dst[cont] = src[cont];
+			cont++;
+		}
+		dst[cont] = 0;
+	}	
 	return (srclen);
 }
 /*
