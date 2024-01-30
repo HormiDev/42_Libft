@@ -6,11 +6,12 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 17:47:23 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/30 01:41:44 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/01/30 01:46:40 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -18,20 +19,16 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	srclen;
 
 	cont = 0;
-	srclen = 0;
-	while (src[srclen] != '\0')
-	{
-		srclen++;
-	}
+	srclen = ft_strlen(src);
 	if (dstsize > 0)
-	{	
+	{
 		while (cont < srclen && cont < dstsize - 1)
 		{
 			dst[cont] = src[cont];
 			cont++;
 		}
 		dst[cont] = 0;
-	}	
+	}
 	return (srclen);
 }
 /*
