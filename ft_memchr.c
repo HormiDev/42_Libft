@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:32:50 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/18 17:13:40 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:58:59 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,37 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	cont = 0;
 	while (cont < n)
 	{
-		if (str[cont] == c)
+		if (str[cont] == (unsigned char)c)
 			return (str + cont);
 		cont++;
 	}
 	return (0);
 }
+/*******************************************************************************
+La función 'ft_memchr' es una implementación personalizada de 'memchr' en C. 
+Esta función busca un carácter específico en los primeros 'n' bytes de la zona 
+de memoria apuntada por 's'.
+
+La función toma tres argumentos: un puntero a una zona de memoria 's', un 
+entero 'c' que representa el carácter a buscar, y un tamaño 'n'.
+
+Dentro de la función, se inicializa una variable de contador 'cont' a 0 y se 
+crea un puntero a unsigned char 'str' que apunta a la misma zona de memoria que 
+'s'. Esto se hace para poder trabajar con la memoria como si fuera una cadena 
+de caracteres.
+
+Luego, la función entra en un bucle while que se ejecuta mientras 'cont' sea 
+menor que 'n'. Dentro del bucle, hay una declaración if que verifica si el 
+byte actual en la zona de memoria es igual a 'c'. Si es así, la función 
+devuelve un puntero a este byte.
+
+Si el byte actual no es igual a 'c', se incrementa 'cont' y el bucle continúa 
+con el siguiente byte.
+
+Si el bucle termina sin encontrar 'c' en la zona de memoria, la función 
+devuelve 0, lo que indica que 'c' no se encontró en los primeros 'n' bytes de 
+la zona de memoria.
+*******************************************************************************/
 /*
 #include <string.h>
 
