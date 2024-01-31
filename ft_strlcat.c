@@ -6,42 +6,39 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:59:25 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/30 01:44:48 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/01/31 12:49:27 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
+	size_t	dstlen;
+	size_t	srclen;
 	size_t	cont;
-	size_t	cont2;
 
+	dstlen = ft_strlen(dst);
+	srclen = ft_strlen(src);
 	cont = 0;
-	cont2 = 0;
-	while (dst[cont] != 0 && cont + cont2 < dstsize)
+	if (dstsize == 0)
+		return (srclen);
+	while (dstlen + cont < dstsize - 1 && src[cont] != '\0')
 	{
+		dst[dstlen + cont] = src[cont];
 		cont++;
 	}
-	while (*src != 0 && cont + cont2 < dstsize)
-	{
-		dst[cont2 + cont] = *src;
-		src++;
-		cont2++;
-	}
-	if (cont + cont2 == dstsize)
-		dst[cont2 + cont - 1] = 0;
-	while (*src != 0)
-	{
-		src++;
-		cont2++;
-	}
-	return (cont + cont2);
+	dst[dstlen + cont] = '\0';
+	if (dstsize < dstlen)
+		return (dstsize + srclen);
+	return (dstlen + srclen);
 }
 /*
 #include <string.h>
 
-int main() {
+int main() 
+{
 char dst[8] = "Hola, ";
 char src[50] = "Mundo!";
 size_t ret;
@@ -61,6 +58,6 @@ printf("Return value of ft_strlcat: %zu\n", ret);
 printf("%s\n", dst);
 printf("Posición de memoria de dst después de ft_strlcat: %p\n", (void *)dst);
 
-    return 0;
+return 0;
 }
 */
