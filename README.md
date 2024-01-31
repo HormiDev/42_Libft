@@ -1,6 +1,6 @@
 # 42_Libft
 
-### Bienvenido a 42_Libft, mi biblioteca de C creada como parte del primer proyecto de Campus 42.
+### Hola bienvenid@ a 42_Libft, mi biblioteca de C creada como parte del primer proyecto de Campus 42.
 
 Las funciones que he implementado son:
 
@@ -19,4 +19,4 @@ Además, he implementado las siguientes funciones que requieren el uso de `mallo
 - `calloc`: Esta función asigna memoria para un arreglo de elementos de un cierto tamaño y los inicializa a cero.
 - `strdup`: Esta función crea una copia nueva de una cadena existente.
 
-¡Mucha suerte! :)
+¡Mucha suerte! ;D
