@@ -6,12 +6,14 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:02:07 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/23 11:02:22 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/01 21:36:52 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# include <stdio.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

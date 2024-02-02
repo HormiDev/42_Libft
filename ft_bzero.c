@@ -6,11 +6,11 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:19:59 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/31 14:09:17 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/01 21:38:09 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

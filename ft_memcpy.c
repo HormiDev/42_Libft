@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 17:17:18 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/18 19:39:54 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:09:34 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char	*dest;
 	char	*str;
 
+	if (dst == 0 && src == 0)
+		return (0);
 	dest = (char *)dst;
 	str = (char *)src;
 	cont = 0;
