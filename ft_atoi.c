@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 01:52:07 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/02 01:26:37 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/02 17:37:24 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,59 @@
 
 int	ft_atoi(const char *str)
 {
-	int	len;
 	int	num;
+	int	cont;
 	int	mult;
 
 	num = 0;
+	cont = 0;
 	mult = 1;
-	len = ft_strlen(str) - 1;
-	while (len > 0)
+	while (str[cont] == ' ' || (str[cont] >= '\t' && str[cont] <= '\r'))
+		cont++;
+	if (str[cont] == '-')
+		mult = -1;
+	if (str[cont] == '-' || str[cont] == '+')
+		cont++;
+	while (ft_isdigit(str[cont]))
 	{
-		if (ft_isdigit(str[len]))
-		{
-			num += (str[len] - 48) * -mult;
-			mult *= 10;
-		}
-		else
-		{
-			num = 0;
-			mult = 1;
-		}
-		len--;
+		num = num * 10 + (str[cont] - 48);
+		cont++;
 	}
-	if (ft_isdigit(str[0]))
-		num = (num + (str[0] - 48) * -mult) * -1;
-	else if (str[0] == '-' || str[0] == '+')
-	{
-		if (str[0] == '+')
-			num *= -1;
-	}
-	else
-		num = 0;
-	return (num);
+	return (num * mult);
 }
+/*******************************************************************************
+La función 'ft_atoi' es una implementación personalizada de 'atoi' en C. Esta 
+función convierte una cadena de caracteres que representa un número entero en 
+su equivalente numérico.
+
+La función toma un argumento, un puntero a una cadena de caracteres 'str'.
+
+Dentro de la función, se inicializan tres variables: 'num' para almacenar el 
+número resultante, 'cont' para usar como contador en los bucles, y 'mult' para 
+almacenar el signo del número (1 para positivo, -1 para negativo).
+
+Primero, la función entra en un bucle while para saltar cualquier espacio en 
+blanco o caracteres de control al inicio de la cadena.
+
+Luego, la función verifica si el carácter actual es un signo negativo ('-'). Si 
+es así, se establece 'mult' a -1 para indicar que el número es negativo.
+
+Después de esto, la función verifica si el carácter actual es un signo negativo 
+o positivo. Si es así, se incrementa 'cont' para pasar al siguiente carácter.
+
+A continuación, la función entra en otro bucle while que se ejecuta mientras el 
+carácter actual sea un dígito numérico. Dentro del bucle, se multiplica 'num' 
+por 10 y se suma el valor numérico del dígito actual (obtenido restando 48, 
+que es el valor ASCII de '0', al valor ASCII del dígito). Luego, se incrementa 
+'cont'.
+
+Finalmente, la función devuelve el número resultante multiplicado por 'mult', 
+lo que asegura que el número tenga el signo correcto.
+
+En resumen, 'ft_atoi' convierte una cadena de caracteres que representa un 
+número entero en su equivalente numérico, teniendo en cuenta los espacios en 
+blanco iniciales y el signo del número.
+*******************************************************************************/
 /*
 #include <stdlib.h>
 

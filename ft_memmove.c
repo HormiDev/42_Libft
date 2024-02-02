@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 18:07:46 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/19 22:55:43 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/02 17:49:34 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,44 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+/*******************************************************************************
+La función 'ft_memmove' es una implementación personalizada de 'memmove' en C. 
+Esta función copia los primeros 'len' bytes de la zona de memoria apuntada por 
+'src' a la zona de memoria apuntada por 'dst'. A diferencia de 'memcpy', 
+'memmove' maneja correctamente los casos en los que las zonas de memoria se 
+superponen.
+
+La función toma tres argumentos: dos punteros a zonas de memoria 'dst' y 'src', 
+y un tamaño 'len'.
+
+Dentro de la función, se inicializa una variable de contador 'cont' a 0 y se 
+crean dos punteros a unsigned char 'dest' y 'str' que apuntan a las mismas 
+zonas de memoria que 'dst' y 'src' respectivamente. Esto se hace para poder 
+trabajar con la memoria como si fueran cadenas de caracteres.
+
+Antes de comenzar a copiar, la función verifica si tanto 'dst' como 'src' son 
+nulos. Si es así, la función devuelve 'dst' ya que no hay nada que copiar.
+
+Luego, la función verifica si 'dest' es menor que 'str'. Si es así, significa 
+que 'dst' está antes de 'src' en la memoria, por lo que es seguro copiar los 
+bytes de izquierda a derecha. En este caso, la función entra en un bucle while 
+que se ejecuta mientras 'len' sea mayor que 0, copiando el byte actual de 'str' 
+a 'dest' y decrementando 'len'.
+
+Si 'dest' no es menor que 'str', significa que 'dst' está después de 'src' en 
+la memoria o que se superponen. En este caso, para evitar sobrescribir los 
+datos en 'src' antes de que se copien, la función copia los bytes de derecha a 
+izquierda. Entra en otro bucle while que se ejecuta mientras 'len' sea mayor 
+que 0, copiando el byte actual de 'str' a 'dest' y decrementando 'len'.
+
+Finalmente, la función devuelve un puntero a la zona de memoria 'dst'. Esto 
+permite encadenar operaciones de copia, ya que el valor devuelto apunta al 
+inicio de la zona de memoria a la que se copiaron los datos.
+
+En resumen, 'ft_memmove' copia los primeros 'len' bytes de una zona de memoria 
+a otra, manejando correctamente los casos en los que las zonas de memoria se 
+superponen.
+*******************************************************************************/
 /*
 #include <string.h>
 
