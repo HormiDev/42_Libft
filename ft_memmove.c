@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 18:07:46 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/02 17:49:34 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:03:20 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_memmove' es una implementación personalizada de 'memmove' en C. 
 Esta función copia los primeros 'len' bytes de la zona de memoria apuntada por 
 'src' a la zona de memoria apuntada por 'dst'. A diferencia de 'memcpy', 

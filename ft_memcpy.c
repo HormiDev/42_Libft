@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 17:17:18 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/02 17:46:10 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:03:16 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_memcpy' es una implementación personalizada de 'memcpy' en C. 
 Esta función copia los primeros 'n' bytes de la zona de memoria apuntada por 
 'src' a la zona de memoria apuntada por 'dst'.

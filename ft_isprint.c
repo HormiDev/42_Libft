@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:01:39 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/31 14:20:11 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:02:56 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_isdigit' es una implementación personalizada de la función 
 estándar de la biblioteca 'isdigit' en C. Esta función verifica si un carácter 
 es un dígito numérico.

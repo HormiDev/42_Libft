@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:49:32 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/31 13:26:23 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:03:32 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strchr(const char *str, int c)
 	return (0);
 }
 
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_strchr' es una implementación personalizada de la función 
 estándar de la biblioteca C 'strchr'. Esta función busca la primera aparición 
 de un carácter específico en una cadena de caracteres.

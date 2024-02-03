@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:15:46 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/02 17:55:49 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:03:52 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlen(const char *str)
 	}
 	return (cont);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_strlen' en el código C proporcionado es una implementación 
 personalizada de la función estándar de la biblioteca 'strlen' en C. Esta 
 función calcula la longitud de la cadena 'str'.

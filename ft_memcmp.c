@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:52:21 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/02 17:43:49 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:03:10 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_memcmp' es una implementación personalizada de 'memcmp' en C. 
 Esta función compara los primeros 'n' bytes de dos zonas de memoria.
 

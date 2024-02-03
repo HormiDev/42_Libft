@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 17:47:23 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/01 16:50:51 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:03:47 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (srclen);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_strlcpy' es una implementación personalizada de la función 
 'strlcpy' que se encuentra en algunas bibliotecas de C. Esta función se utiliza 
 para copiar una cadena de origen a una cadena de destino de manera segura, 

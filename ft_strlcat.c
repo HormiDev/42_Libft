@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:59:25 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/02 17:54:06 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:03:42 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (dstsize + srclen);
 	return (dstlen + srclen);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_strlcat' es una implementación personalizada de 'strlcat' en C. 
 Esta función concatena la cadena 'src' a la cadena 'dst' de manera segura, 
 asegurándose de que 'dst' no se desborde y siempre esté terminada por '\0'.

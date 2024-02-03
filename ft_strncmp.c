@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 19:51:01 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/31 16:19:44 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:04:14 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_strncmp' es una implementación personalizada de 'strncmp' en C. 
 Esta función compara hasta los primeros 'n' caracteres de dos cadenas de 
 caracteres.

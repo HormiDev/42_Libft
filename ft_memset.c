@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 20:01:56 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/02 17:51:54 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:03:26 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_memset' es una implementación personalizada de 'memset' en C. 
 Esta función llena los primeros 'len' bytes de la zona de memoria apuntada por 
 'b' con el byte 'c'.

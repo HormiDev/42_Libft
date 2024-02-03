@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 18:31:34 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/02 18:03:23 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:04:30 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_tolower(int c)
 		return (c = c + 32);
 	return (c);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_tolower' es una implementación personalizada de 'tolower' en C. 
 Esta función convierte un carácter en mayúscula a minúscula.
 

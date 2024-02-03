@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 18:07:42 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/03 23:02:54 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:01:42 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_calloc(size_t count, size_t size)
 	else
 		return (NULL);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_calloc' es una implementación personalizada de 'calloc' en C. 
 Esta función se utiliza para asignar memoria dinámicamente en el heap.
 

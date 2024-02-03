@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 23:04:19 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/03 23:58:01 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:03:36 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strdup(const char *s1)
 	str[cont] = 0;
 	return (str);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_strdup' es una implementación personalizada de 'strdup' en C. 
 Esta función se utiliza para crear una copia duplicada de una cadena de 
 caracteres existente.

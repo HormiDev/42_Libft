@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 18:29:33 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/31 14:06:12 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:02:27 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_isalnum' es una implementación de 'isalnum' en C. Esta función 
 verifica si un carácter es alfanumérico, es decir, si es una letra 
 (mayúscula o minúscula) o un dígito.

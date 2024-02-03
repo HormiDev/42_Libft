@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 16:08:57 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/31 14:04:45 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:02:36 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_isalpha' es una implementación personalizada de 'isalpha' en C. 
 Esta función verifica si un carácter es alfabético.
 

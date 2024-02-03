@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 01:52:07 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/02 17:37:24 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:02:07 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_atoi(const char *str)
 	}
 	return (num * mult);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_atoi' es una implementación personalizada de 'atoi' en C. Esta 
 función convierte una cadena de caracteres que representa un número entero en 
 su equivalente numérico.

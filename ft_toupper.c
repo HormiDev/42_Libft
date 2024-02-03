@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 18:04:42 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/02 18:04:35 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:04:36 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_toupper(int c)
 		return (c = c - 32);
 	return (c);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_toupper' es una implementación personalizada de 'toupper' en C. 
 Esta función convierte un carácter en minúscula a mayúscula.
 

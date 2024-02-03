@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:19:59 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/01 21:38:09 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:02:14 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_bzero(void *s, size_t n)
 		cont++;
 	}
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_bzero'es una implementación personalizada de 'bzero' en C. Esta 
 función se utiliza para establecer los primeros 'n' bytes de la zona de memoria 
 apuntada por 's' a cero (bytes nulos).

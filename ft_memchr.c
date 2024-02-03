@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:32:50 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/01/31 17:58:59 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 00:03:02 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-/*******************************************************************************
+/**********************************DESCRIPCION**********************************
 La función 'ft_memchr' es una implementación personalizada de 'memchr' en C. 
 Esta función busca un carácter específico en los primeros 'n' bytes de la zona 
 de memoria apuntada por 's'.
