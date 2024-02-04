@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 19:40:02 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/04 00:04:25 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 13:28:12 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ char	*ft_strrchr(const char *str, int c)
 	return (resultado);
 }
 /**********************************DESCRIPCION**********************************
-La función 'ft_strrchr' es una implementación personalizada de la función 
-estándar de la biblioteca 'strrchr' en C. Esta función busca la última 
-aparición de un carácter en una cadena.
+La función 'ft_strrchr' es una implementación personalizada de 'strrchr' en C. 
+Esta función busca la última aparición de un carácter en una cadena.
 
 La función toma dos argumentos: un puntero a una cadena de caracteres 'str' y 
 un entero 'c'. El entero 'c' se convierte a un carácter 'cchar' para la 

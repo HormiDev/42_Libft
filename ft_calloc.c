@@ -6,12 +6,11 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 18:07:42 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/04 00:01:42 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:03:15 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -24,7 +23,7 @@ void	*ft_calloc(size_t count, size_t size)
 		return (punt);
 	}
 	else
-		return (NULL);
+		return (0);
 }
 /**********************************DESCRIPCION**********************************
 La función 'ft_calloc' es una implementación personalizada de 'calloc' en C. 
