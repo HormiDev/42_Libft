@@ -6,7 +6,7 @@
 #    By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2024/02/03 23:41:00 by ide-dieg         ###   ########.fr        #
+#    Updated: 2024/02/04 03:00:45 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRC = 	ft_isalpha.c \
 		ft_strlcat.c \
 		ft_calloc.c \
 		ft_strdup.c \
+		ft_substr.c \
 
 INCLUDES = libft.h
 
