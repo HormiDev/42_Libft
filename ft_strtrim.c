@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 05:19:00 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/04 16:44:34 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/06 21:13:54 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 /**********************************DESCRIPCION**********************************
-La función 'ft_strtrim' en el código C proporcionado es una función que recorta 
-los caracteres de inicio y final de una cadena ('s1') que están presentes en 
-otra cadena ('set').
+La función 'ft_strtrim' recorta los caracteres de inicio y final de una cadena 
+('s1') que están presentes en otra cadena ('set').
 
 La función comienza verificando si las cadenas 's1' o 'set' son nulas. Si 
 alguna de ellas es nula, la función retorna 0 (NULL).

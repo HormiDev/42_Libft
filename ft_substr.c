@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 01:41:28 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/04 03:44:34 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/06 21:48:59 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	cont;
+	size_t	s_len;
 
 	cont = 0;
-	if (start > ft_strlen(s))
-		len = 0;
-	if (ft_strlen(s) < len)
-		len = ft_strlen(s);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	else if (s_len - start < len)
+		len = s_len - start;
 	str = malloc((len + 1) * sizeof(char));
 	if (str == 0)
 		return (0);
@@ -34,42 +36,35 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 /**********************************DESCRIPCION**********************************
-La función 'ft_substr' implementación personalizada que se utiliza para extraer 
-una subcadena de una cadena dada en C.
+La función 'ft_substr' toma tres argumentos: una cadena de caracteres 's', un 
+entero sin signo 'start' que representa el índice de inicio desde donde se debe 
+extraer la subcadena, y un tamaño 'len' que representa la longitud de la 
+subcadena a extraer.
 
-La función 'ft_substr' toma tres argumentos: 's', que es la cadena de la que se 
-va a extraer la subcadena, 'start', que es el índice desde el que se va a 
-empezar a extraer la subcadena, y 'len', que es la longitud de la subcadena 
-que se va a extraer.
+Primero, la función declara algunas variables: 'str' que será la subcadena 
+resultante, 'cont' que se utilizará como contador en un bucle, y 's_len' que 
+almacenará la longitud de la cadena de entrada 's'.
 
-Primero, se declara un puntero a char 'str' y una variable de tamaño 'cont' que 
-se inicializa a 0.
+La longitud de 's' se calcula utilizando la función 'ft_strlen' y se almacena 
+en 's_len'. Luego, la función verifica si el índice de inicio 'start' es mayor 
+o igual que 's_len'. Si es así, significa que el índice de inicio está fuera de 
+los límites de la cadena 's', por lo que la función devuelve una cadena vacía 
+utilizando la función 'ft_strdup'.
 
-Luego, se comprueba si el valor de 'start' es mayor que la longitud de la 
-cadena 's'. Si es así, se establece el valor de 'len' a 0, ya que no se puede 
-extraer ninguna subcadena en este caso.
+Si 'start' es menor que 's_len', la función verifica si la longitud restante de 
+la cadena desde 'start' es menor que 'len'. Si es así, ajusta 'len' para que 
+sea igual a la longitud restante de la cadena.
 
-Después, se comprueba si la longitud de la cadena 's' es menor que 'len'. Si es 
-así, se establece el valor de 'len' a la longitud de la cadena 's', ya que no 
-se puede extraer una subcadena más larga que la cadena original.
+A continuación, la función intenta asignar memoria para la subcadena 'str' 
+utilizando 'malloc'. El tamaño de la memoria a asignar es 
+('len' + 1) * sizeof(char), donde 'len' + 1 es la longitud de la subcadena más 
+el carácter nulo de terminación, y sizeof(char) es el tamaño de un carácter en 
+bytes. Si la asignación de memoria falla, la función devuelve 0.
 
-A continuación, se utiliza la función 'malloc' para asignar memoria para la 
-subcadena. El tamaño de la memoria que se asigna es 'len' más 1 (para el 
-carácter nulo al final de la cadena) multiplicado por el tamaño de un carácter.
-
-Después de la asignación, se verifica si 'malloc' ha tenido éxito comprobando 
-si 'str' es igual a 0. Si 'str' es 0, significa que 'malloc' no pudo asignar la 
-memoria solicitada y la función 'ft_substr' devuelve 0.
-
-Si 'malloc' tuvo éxito, se entra en un bucle while donde se copia cada carácter 
-de la cadena original 's' a la nueva cadena 'str' uno por uno, comenzando desde 
-el índice 'start'. Este bucle continúa hasta que se ha copiado la longitud 
-deseada 'len'.
-
-Después de copiar la subcadena, se añade un carácter nulo al final de la nueva 
-cadena para indicar el final de la cadena.
-
-Finalmente, la función 'ft_substr' devuelve el puntero a la subcadena extraída.
+Si la asignación de memoria tiene éxito, la función entra en un bucle while que 
+copia 'len' caracteres de 's' a 'str', comenzando desde el índice 'start'. 
+Finalmente, la función agrega un carácter nulo al final de 'str' y devuelve 
+'str'.
 *******************************************************************************/
 /*
 int main()
