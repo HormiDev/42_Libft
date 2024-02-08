@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 16:42:29 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/08 02:05:12 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/08 16:03:13 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,18 @@ char	**ft_split(char const *s, char c)
 				anterior = cont;
 				while (s[cont] != c && s[cont] != 0)
 					cont++;
-				matriz[nstr++] = ft_substr(s, anterior, cont - anterior);
+				matriz[nstr] = ft_substr(s, anterior, cont - anterior);
+				if (matriz[nstr] == 0)
+				{
+					while (nstr >= 0)
+					{
+					free(matriz[nstr]);
+					nstr--;
+					}
+					free(matriz);
+					return (0);
+				}
+				nstr++;
 			}
 			cont++;
 		}
@@ -63,7 +74,7 @@ char	**ft_split(char const *s, char c)
 	}
 	return (0);
 }
-
+/*
 int main()
 {
     char **result;
@@ -77,3 +88,4 @@ int main()
 
     return 0;
 }
+*/
