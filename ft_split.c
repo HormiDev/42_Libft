@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 16:42:29 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/08 16:03:13 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/09 01:16:56 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	ft_strworlds(char const *s, char c)
 	int	cont;
 	int	palabras;
 	int	len;
-
+	
 	len = ft_strlen(s);
 	palabras = 0;
 	cont = 1;
-	if (s[0] != c)
+	if (s[0] != c && s[0] != 0)
 		palabras++;
 	while (cont < len)
 	{
@@ -57,10 +57,9 @@ char	**ft_split(char const *s, char c)
 				matriz[nstr] = ft_substr(s, anterior, cont - anterior);
 				if (matriz[nstr] == 0)
 				{
-					while (nstr >= 0)
+					while (nstr-- > 0)
 					{
-					free(matriz[nstr]);
-					nstr--;
+						free(matriz[nstr]);
 					}
 					free(matriz);
 					return (0);
@@ -79,7 +78,7 @@ int main()
 {
     char **result;
 
-    result = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ');
+    result = ft_split("", 'a');
 
     for (int i = 0; result[i] != NULL; i++)
     {
@@ -88,4 +87,5 @@ int main()
 
     return 0;
 }
+
 */
