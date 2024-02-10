@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:44:25 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/10 14:31:37 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/10 22:47:01 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 int	ft_intlen(int n)
 {
-	int 	len;
-	int		mult;
+	int	len;
+	int	mult;
 
 	if (n == -2147483648)
 		return (11);
 	len = 1;
 	mult = 1;
 	if (n < 0)
-		{
-			len++;
-			n = n * -1;
-		}
+	{
+		len++;
+		n = n * -1;
+	}
 	while (n / mult > 9)
 	{
 		len++;
@@ -36,26 +36,38 @@ int	ft_intlen(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*str = 0;
-	int 	len;
-	int		mult;
-	char	negative;
+	char	*str;
+	int		len;
 
-	str = malloc((len + 1) * sizeof(char));
-	str[len + 1] = 0;
-	mult = 0;// Reciclar es bueno para el planeta
-	while (mult < 10)
+	len = ft_intlen(n);
+	str = ft_calloc((len + 1), sizeof(char));
+	if (str == 0)
+		return (NULL);
+	str[len] = 0;
+	if (n >= 0)
+		n = n * -1;
+	else
+		str[0] = '-';
+	while ((len > 0 && str[0] == 0) || (len > 1 && str[0] == '-'))
 	{
-		
+		str[len - 1] = ((n % 10) * -1 + '0');
+		n = n / 10;
+		len--;
 	}
 	return (str);
 }
-
+/*
 int main()
 {
-	printf("%d\n", ft_intlen(1000));
+	printf("%d\n", ft_intlen(0));
+	printf("%d\n", ft_intlen(-5859));
 	printf("%d\n", ft_intlen(-2147483648));
 	printf("%d\n", ft_intlen(2147483647));
 	printf("%d\n", ft_intlen(-2147483647));
+	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(-2147483648));
+	printf("%s\n", ft_itoa(2147483647));
+	printf("%s\n", ft_itoa(-2147483647));
 	return 0;
 }
+*/
