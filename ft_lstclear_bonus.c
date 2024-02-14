@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 17:33:05 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/14 20:49:56 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/14 20:54:23 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		while (point != 0)
 		{
 			next = point->next;
-			del(point->content);
-			free(point);
+			ft_lstdelone(point, del);
 			point = next;
 		}
 		lst[0] = 0;
