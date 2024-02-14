@@ -6,7 +6,7 @@
 #    By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2024/02/14 18:13:01 by ide-dieg         ###   ########.fr        #
+#    Updated: 2024/02/14 22:37:17 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ SRC = ft_isalpha.c \
 	ft_lstadd_back_bonus.c \
 	ft_lstdelone_bonus.c \
 	ft_lstclear_bonus.c \
+	ft_lstiter_bonus.c \
 
 # Archivos objeto
 OBJ = $(SRC:.c=.o)
