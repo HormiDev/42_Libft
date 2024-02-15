@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 19:18:38 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/04 00:04:20 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/15 01:32:44 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	needlesize = ft_strlen(needle);
 	if (needlesize == 0)
-		return (haystack);
+		return ((char *)haystack);
 	cont = 0;
 	while (cont < len && haystack[cont] != 0 && needlesize + cont <= len)
 	{
