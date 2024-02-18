@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 17:03:02 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/18 00:38:38 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/18 06:50:23 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,3 +41,36 @@ En resumen, esta función borra un nodo de una lista enlazada y libera la
 memoria que ocupaba, utilizando una función de borrado proporcionada por el 
 usuario.
 *******************************************************************************/
+/*
+void del(void *content)
+{
+    free(content);
+}
+
+int main()
+{
+    int *num = malloc(sizeof(int));
+    *num = 42;
+
+    t_list *node = ft_lstnew(num);
+    if (node == 0)
+    {
+        printf("Error: No se pudo crear el nodo\n");
+        return (1);
+    }
+
+    ft_lstdelone(node, del);
+
+    // No podemos comprobar directamente que la memoria del nodo ha sido 
+	// liberada, pero podemos comprobar que no podemos acceder a ella sin 
+	// obtener un error.
+    // Si intentamos acceder a la memoria del nodo después de liberarla, 
+	// obtendremos un error de segmentación.
+    // Por lo tanto, si el programa llega a este punto sin errores, asumimos 
+	// que ft_lstdelone funcionó correctamente.
+
+    printf("El nodo ha sido borrado correctamente\n");
+
+    return (0);
+}
+*/

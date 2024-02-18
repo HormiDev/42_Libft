@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:13:54 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/18 00:27:32 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/18 05:49:13 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,45 @@ Finalmente, la función devuelve un puntero al nuevo nodo.
 Este código es un patrón común en C para crear una nueva estructura y asignarle 
 valores iniciales.
 *******************************************************************************/
+/*
+int main()
+{
+    t_list *node1, *node2, *node3;
+    int num = 42;
+    char *str = "Hola, mundo!";
+
+    node1 = ft_lstnew(&num);
+    if (node1 == 0)
+    {
+        printf("Error: No se pudo crear el nodo\n");
+        return (1);
+    }
+
+    node2 = ft_lstnew(str);
+    if (node2 == 0)
+    {
+        printf("Error: No se pudo crear el nodo\n");
+        free(node1);
+        return (1);
+    }
+
+    node3 = ft_lstnew(0);
+    if (node3 == 0)
+    {
+        printf("Error: No se pudo crear el nodo\n");
+        free(node1);
+        free(node2);
+        return (1);
+    }
+
+    printf("Contenido del primer nodo: %d\n", *(int *)(node1->content));
+    printf("Contenido del segundo nodo: %s\n", (char *)(node2->content));
+    printf("Contenido del tercer nodo: %s\n", (char *)(node3->content));
+
+    free(node1);
+    free(node2);
+    free(node3);
+
+    return (0);
+}
+*/

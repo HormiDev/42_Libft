@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 22:43:19 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/18 00:46:53 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/18 07:14:43 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,64 @@ En resumen, esta función crea una nueva lista enlazada aplicando una función
 proporcionada por el usuario a cada elemento de una lista existente, y maneja 
 correctamente los casos en que la creación de un nuevo nodo falla.
 *******************************************************************************/
+/*
+void *increment(void *content)
+{
+    int *num = malloc(sizeof(int));
+    *num = *(int *)content + 1;
+    return num;
+}
 
+void del(void *content)
+{
+    free(content);
+}
+
+int main()
+{
+    t_list *list = NULL;
+    int *num1 = malloc(sizeof(int));
+    *num1 = 42;
+    int *num2 = malloc(sizeof(int));
+    *num2 = 43;
+
+    t_list *node1 = ft_lstnew(num1);
+    if (node1 == 0)
+    {
+        printf("Error: No se pudo crear el nodo\n");
+        return (1);
+    }
+
+    ft_lstadd_back(&list, node1);
+
+    t_list *node2 = ft_lstnew(num2);
+    if (node2 == 0)
+    {
+        printf("Error: No se pudo crear el nodo\n");
+        free(node1);
+        return (1);
+    }
+
+    ft_lstadd_back(&list, node2);
+
+    t_list *new_list = ft_lstmap(list, increment, del);
+
+    if (*(int *)new_list->content != 43 || *(int *)new_list->next->content != 44)
+    {
+        printf("Error: La función no se aplicó correctamente \n");
+        free(node1);
+        free(node2);
+        return (1);
+    }
+
+    printf("La función se aplicó correctamente \n");
+
+    free(node1);
+    free(node2);
+
+    return (0);
+}
+*/
 /*	Version 1
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -106,6 +163,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (listnew);
 }
+
 */
 /**********************************DESCRIPCION**********************************
 La función 'ft_lstmap' crea una nueva lista enlazada aplicando una función 

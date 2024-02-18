@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 17:33:05 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/18 00:35:49 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/18 06:16:24 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,3 +52,57 @@ En resumen, esta función borra todos los nodos de una lista enlazada y libera
 la memoria que ocupaban, utilizando una función de borrado proporcionada por el 
 usuario.
 *******************************************************************************/
+/*
+void del(void *content)
+{
+    free(content);
+}
+
+int main()
+{
+    t_list *node1, *node2, *node3;
+    int *num = malloc(sizeof(int));
+    *num = 42;
+    char *str = ft_strdup("Hola, mundo!");
+
+    node1 = ft_lstnew(num);
+    if (node1 == 0)
+    {
+        printf("Error: No se pudo crear el nodo\n");
+        return (1);
+    }
+
+    node2 = ft_lstnew(str);
+    if (node2 == 0)
+    {
+        printf("Error: No se pudo crear el nodo\n");
+        free(node1);
+        return (1);
+    }
+
+    node3 = ft_lstnew(0);
+    if (node3 == 0)
+    {
+        printf("Error: No se pudo crear el nodo\n");
+        free(node1);
+        free(node2);
+        return (1);
+    }
+
+    node1->next = node2;
+    node2->next = node3;
+
+    ft_lstclear(&node1, del);
+
+    if (node1 == 0)
+    {
+        printf("La lista ha sido borrada correctamente\n");
+    }
+    else
+    {
+        printf("Error: La lista no ha sido borrada correctamente\n");
+    }
+
+    return (0);
+}
+*/

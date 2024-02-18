@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:04:54 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/18 00:32:18 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/18 06:21:53 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,54 @@ se convierte en el primer nodo de la lista.
 En resumen, esta función añade un nuevo nodo al principio de una lista 
 enlazada, desplazando todos los otros nodos hacia abajo en la lista.
 *******************************************************************************/
+/*
+int main()
+{
+    t_list *list = NULL;
+    int *num1 = malloc(sizeof(int));
+    *num1 = 42;
+    int *num2 = malloc(sizeof(int));
+    *num2 = 43;
+
+    t_list *node1 = ft_lstnew(num1);
+    if (node1 == 0)
+    {
+        printf("Error: No se pudo crear el nodo\n");
+        return (1);
+    }
+
+    ft_lstadd_front(&list, node1);
+
+    if (list != node1)
+    {
+        printf("Error: El nodo no se añadió correctamente \n");
+        free(node1);
+        return (1);
+    }
+
+    t_list *node2 = ft_lstnew(num2);
+    if (node2 == 0)
+    {
+        printf("Error: No se pudo crear el nodo\n");
+        free(node1);
+        return (1);
+    }
+
+    ft_lstadd_front(&list, node2);
+
+    if (list != node2 || list->next != node1)
+    {
+        printf("Error: El nodo no se añadió correctamente \n");
+        free(node1);
+        free(node2);
+        return (1);
+    }
+
+    printf("Los nodos se añadieron correctamente \n");
+
+    free(node1);
+    free(node2);
+
+    return (0);
+}
+*/
