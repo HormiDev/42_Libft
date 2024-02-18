@@ -6,13 +6,13 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:44:25 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/11 15:27:41 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/18 07:21:25 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_intlen(int n);
+static int	ft_intlen(int n);
 
 char	*ft_itoa(int n)
 {
@@ -64,7 +64,7 @@ Cuando el bucle termina, la función devuelve 'str', que es la representación
 de cadena del número entero 'n'.
 *******************************************************************************/
 
-int	ft_intlen(int n)
+static int	ft_intlen(int n)
 {
 	int	len;
 	int	mult;

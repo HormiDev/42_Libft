@@ -6,15 +6,15 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 16:42:29 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/11 15:45:54 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/18 07:24:23 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strworlds(char const *s, char c);
-void	liberate(char **matriz, int nstr);
-char	**ft_split2(char const *s, char c, char	**matriz, size_t len);
+static int		ft_strworlds(char const *s, char c);
+static void		liberate(char **matriz, int nstr);
+static char		**ft_split2(char const *s, char c, char	**matriz, size_t len);
 
 char	**ft_split(char const *s, char c)
 {
@@ -52,7 +52,7 @@ resultado. Donde se realiza la división real de la cadena en palabras.
 Si la asignación de memoria para 'matriz' no es exitosa, la función devuelve 0.
 *******************************************************************************/
 
-char	**ft_split2(char const *s, char c, char	**matriz, size_t len)
+static char	**ft_split2(char const *s, char c, char	**matriz, size_t len)
 {
 	size_t	cont;
 	size_t	checkpoit;
@@ -109,7 +109,7 @@ Después de eso, incrementa 'cont' en uno. Cuando el bucle termina, establece el
 último elemento de 'matriz' en 0 y devuelve 'matriz'.
 *******************************************************************************/
 
-int	ft_strworlds(char const *s, char c)
+static int	ft_strworlds(char const *s, char c)
 {
 	int	cont;
 	int	palabras;
@@ -154,7 +154,7 @@ Cuando el bucle termina, la función devuelve 'palabras', que es el número de
 palabras en 's' que están separadas por el carácter 'c'.
 *******************************************************************************/
 
-void	liberate(char **matriz, int nstr)
+static void	liberate(char **matriz, int nstr)
 {
 	while (nstr-- > 0)
 	{
