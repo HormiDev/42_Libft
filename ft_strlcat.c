@@ -6,11 +6,10 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:59:25 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/04 00:03:42 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/18 09:56:06 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)

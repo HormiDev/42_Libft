@@ -6,11 +6,10 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 17:47:23 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/04 00:03:47 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/18 09:56:11 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)

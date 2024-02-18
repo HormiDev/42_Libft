@@ -6,12 +6,11 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 23:04:19 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/04 00:03:36 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/18 09:55:57 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strdup(const char *s1)
 {

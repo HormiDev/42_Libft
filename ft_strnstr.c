@@ -6,11 +6,10 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 19:18:38 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/15 01:32:44 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/02/18 09:56:30 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
