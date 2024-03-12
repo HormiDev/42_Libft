@@ -1,6 +1,7 @@
 # 42_Libft
 
-## Hola🤗 bienvenid@ a 42_Libft, mi biblioteca de C creada como parte del primer proyecto de Campus 42.
+## Hola🤗 bienvenid@ a 42_Libft, mi biblioteca de C creada como parte del primer proyecto de Campus 42. 
+# `125/100`
 
 ## Las funciones que he implementado son:
 
