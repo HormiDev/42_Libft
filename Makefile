@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2024/02/16 20:05:50 by ide-dieg         ###   ########.fr        #
+#    Updated: 2024/02/18 17:49:29 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ AR = ar
 
 # Opciones de compilación
 CFLAGS = -Wall -Wextra -Werror
+# -g3 -fsanitize=address
 
 # Opciones de archivado
 ARFLAGS = -rcs
