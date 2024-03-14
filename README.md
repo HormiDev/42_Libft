@@ -23,32 +23,32 @@ Además, he implementado las siguientes funciones que requieren el uso de `mallo
 ## Funciones Adicionales
 
 - Manipulación de cadenas:
-  - `ft_substr`: Obtiene una subcadena de una cadena.
-  - `ft_strjoin`: Une dos cadenas.
-  - `ft_strtrim`: Recorta los caracteres especificados del inicio y del final de una cadena.
-  - `ft_split`: Divide la cadena usando el carácter dado como delimitador.
-  - `ft_strmapi`: Aplica la función dada a cada carácter de la cadena para crear una nueva cadena.
-  - `ft_striteri`: Aplica la función dada a cada carácter de la cadena.
+  - `substr`: Obtiene una subcadena de una cadena.
+  - `strjoin`: Une dos cadenas.
+  - `strtrim`: Recorta los caracteres especificados del inicio y del final de una cadena.
+  - `split`: Divide la cadena usando el carácter dado como delimitador.
+  - `strmapi`: Aplica la función dada a cada carácter de la cadena para crear una nueva cadena.
+  - `striteri`: Aplica la función dada a cada carácter de la cadena.
 
 - Conversión de datos:
-  - `ft_itoa`: Convierte un número entero en una cadena.
+  - `itoa`: Convierte un número entero en una cadena.
 
 - Salida de datos:
-  - `ft_putchar_fd`: Escribe el carácter dado en el descriptor de archivo dado.
-  - `ft_putstr_fd`: Escribe la cadena dada en el descriptor de archivo dado.
-  - `ft_putendl_fd`: Escribe la cadena dada seguida de un salto de línea en el descriptor de archivo dado.
-  - `ft_putnbr_fd`: Escribe el número entero dado en el descriptor de archivo dado.
+  - `putchar_fd`: Escribe el carácter dado en el descriptor de archivo dado.
+  - `putstr_fd`: Escribe la cadena dada en el descriptor de archivo dado.
+  - `putendl_fd`: Escribe la cadena dada seguida de un salto de línea en el descriptor de archivo dado.
+  - `putnbr_fd`: Escribe el número entero dado en el descriptor de archivo dado.
 
-## Funciones Bonus
+## Funciones Bonus:
+  - `lstnew`: Crea un nuevo nodo.
+  - `lstadd_front`: Agrega el nuevo nodo al principio de la lista.
+  - `lstsize`: Cuenta el número de nodos en una lista.
+  - `lstlast`: Devuelve el último nodo de la lista.
+  - `lstadd_back`: Agrega el nuevo nodo al final de la lista.
+  - `lstdelone`: Elimina y libera el nuevo nodo.
+  - `lstclear`: Elimina y libera el primer nodo de la lista y todos los sucesores.
+  - `lstiter`: Itera la lista y aplica la función 'f' al contenido de cada nodo.
+  - `lstmap`: Itera la lista y aplica la función 'f' al contenido de cada nodo. Crea una nueva lista resultante de las aplicaciones sucesivas de 'f'.
 
-- `ft_lstnew`: Crea un nuevo nodo.
-- `ft_lstadd_front`: Agrega el nuevo nodo al principio de la lista.
-- `ft_lstsize`: Cuenta el número de nodos en una lista.
-- `ft_lstlast`: Devuelve el último nodo de la lista.
-- `ft_lstadd_back`: Agrega el nuevo nodo al final de la lista.
-- `ft_lstdelone`: Elimina y libera el nuevo nodo.
-- `ft_lstclear`: Elimina y libera el primer nodo de la lista y todos los sucesores.
-- `ft_lstiter`: Itera la lista y aplica la función 'f' al contenido de cada nodo.
-- `ft_lstmap`: Itera la lista y aplica la función 'f' al contenido de cada nodo. Crea una nueva lista resultante de las aplicaciones sucesivas de 'f'.
 
 # ¡Mucha suerte! 😉
