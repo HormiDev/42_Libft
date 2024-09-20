@@ -1,0 +1,6 @@
+[submodule "additional/42_ft_printf"]
+	path = additional/42_ft_printf
+	url = https://github.com/HormiDev/42_ft_printf.git
+[submodule "additional/42_get_next_line"]
+	path = additional/42_get_next_line
+	url = https://github.com/HormiDev/42_get_next_line.git
