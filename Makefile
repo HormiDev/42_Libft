@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2024/02/18 17:49:29 by ide-dieg         ###   ########.fr        #
+#    Updated: 2024/09/21 00:04:59 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,11 +73,22 @@ SRC_BONUS =	ft_lstnew_bonus.c \
 			ft_lstiter_bonus.c \
 			ft_lstmap_bonus.c \
 
+# Archivos fuente adicionales
+SRC_ADDITIONAL =	additional/42_ft_printf/ft_strlen_int.c \
+					additional/42_ft_printf/ft_printf.c \
+					additional/42_ft_printf/ft_putchar.c \
+					additional/42_ft_printf/ft_putnbr_base.c \
+					additional/42_ft_printf/ft_putnbr_base_p.c \
+					additional/42_ft_printf/ft_putstr.c \
+
 # Objetos generados a partir de los archivos fuente
 OBJ = $(SRC:.c=.o)
 
 # Objetos generados a partir de los archivos fuente de la parte bonus
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
+
+# Objetos generados a partir de los archivos fuente adicionales
+OBJ_ADDITIONAL = $(SRC_ADDITIONAL:.c=.o)
 
 # Regla para construir el archivo de salida
 all: $(NAME)
@@ -95,16 +106,28 @@ bonus: $(OBJ_BONUS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJ_BONUS)
 	ranlib $(NAME)
 
+# Regla para construir todos los archivos fuente
+additional: $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL)
+	ranlib $(NAME)
+
+
 # Alias para la regla all
 libft.a: $(NAME)
 
 # Regla para limpiar los archivos objeto
 clean:
-	rm -f $(OBJ) $(OBJ_BONUS)
+	rm -f $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL)
 
 # Regla para limpiar los archivos objeto y el archivo de salida
 fclean:
-	rm -f $(OBJ) $(NAME)
+	rm -f $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL) $(NAME)
 
 # Regla para reconstruir el proyecto desde cero
 re: fclean all
+
+# Regla para reconstruir el proyecto desde cero con la parte bonus
+rebonus: fclean bonus
+
+# Regla para reconstruir el proyecto desde cero con la parte adicional
+readditional: fclean additional

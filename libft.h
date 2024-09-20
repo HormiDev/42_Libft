@@ -6,16 +6,16 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:02:07 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/02/18 11:27:13 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/09/20 23:37:55 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "additional/42_ft_printf/ft_printf.h"
 
 typedef struct s_list
 {
