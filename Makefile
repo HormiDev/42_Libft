@@ -6,7 +6,7 @@
 #    By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2024/09/21 00:04:59 by ide-dieg         ###   ########.fr        #
+#    Updated: 2024/09/22 00:12:07 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,6 +80,8 @@ SRC_ADDITIONAL =	additional/42_ft_printf/ft_strlen_int.c \
 					additional/42_ft_printf/ft_putnbr_base.c \
 					additional/42_ft_printf/ft_putnbr_base_p.c \
 					additional/42_ft_printf/ft_putstr.c \
+					additional/42_get_next_line/get_next_line.c \
+					additional/42_get_next_line/get_next_line_utils.c \
 
 # Objetos generados a partir de los archivos fuente
 OBJ = $(SRC:.c=.o)
