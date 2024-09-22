@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:02:07 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/09/22 00:13:16 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/09/22 15:26:27 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include "additional/42_ft_printf/ft_printf.h"
 # include "additional/42_get_next_line/get_next_line.h"
+# include "additional/add/add.h"
 
 typedef struct s_list
 {
