@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:06:19 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/09/24 10:39:01 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/09/24 22:23:26 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct s_strlist
 typedef struct s_file
 {
 	t_strlist	*list_content;
-	char 		**array_content;
+	char		**array_content;
 	int			lines;
 }	t_file;
 
@@ -62,5 +62,6 @@ t_file		*ft_create_file_from_filename(char *filename);
 t_file		*ft_create_file_from_fd(int fd);
 void		ft_file_clear(t_file **lst);
 void		ft_file_print(t_file *lst);
+t_file		*ft_file_dup(t_file *old_file);
 
 #endif

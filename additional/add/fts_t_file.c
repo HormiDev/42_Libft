@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 02:16:14 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/09/24 10:01:03 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/09/24 22:14:51 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ t_file	*ft_create_file_from_filename(char *filename)
  */
 t_file	*ft_create_file_from_fd(int fd)
 {
-	t_file	*file;
+	t_file		*file;
 	char		*line;
 	int			cont;
 
@@ -122,4 +122,42 @@ void	ft_file_print(t_file *file)
 	if (!file)
 		return ;
 	ft_strlist_print(file->list_content);
+}
+
+/**
+* @brief Crea una copia de una estructura de archivo.
+*
+* Esta función crea una copia de una estructura de archivo y devuelve un  
+* 
+* puntero a la nueva estructura.
+*
+* @param old_file Puntero a la estructura de archivo que se va a copiar.
+* @return Un puntero a una nueva estructura de archivo que es una copia de 
+* la estructura de archivo original.
+*         Si ocurre un error al asignar memoria, devuelve NULL.
+*/
+t_file	*ft_file_dup(t_file *old_file)
+{
+	t_file		*new_file;
+	t_strlist	*tmp;
+
+	new_file = malloc(sizeof(t_file));
+	if (!new_file)
+		return (0);
+	tmp = old_file->list_content;
+	new_file->list_content = 0;
+	while (tmp)
+	{
+		new_file->list_content = ft_strlist_add_new_dup
+			(new_file->list_content, tmp->str);
+		tmp = tmp->next;
+	}
+	new_file->lines = old_file->lines;
+	new_file->array_content = ft_strlist_to_array(new_file->list_content);
+	if (!new_file->array_content)
+	{
+		ft_file_clear(&new_file);
+		return (0);
+	}
+	return (new_file);
 }

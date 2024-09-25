@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 15:42:15 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/09/24 03:15:18 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/09/24 22:16:46 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,15 +88,16 @@ void	ft_strlist_change(t_strlist *lst, char *str)
 	lst->len = ft_strlen2(str);
 }
 
-
 /**
  * @brief crea la un array apartir una lista de cadenas.
  * `t_strlist`.
  *
  * @param lst Un puntero a la lista enlazada de tipo `t_strlist`.
- * @return Un array de cadenas (char **) que contiene todas las cadenas de la lista enlazada.
+ * @return Un array de cadenas (char **) que contiene todas las cadenas de la 
+ * lista enlazada.
  *         El último elemento del array es un puntero nulo (0).
- *         Si la lista enlazada es nula o si la asignación de memoria falla, devuelve 0.
+ *         Si la lista enlazada es nula o si la asignación de memoria falla, 
+ * devuelve 0.
  */
 char	**ft_strlist_to_array(t_strlist *lst)
 {
