@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 15:42:15 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/09/24 22:16:46 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/10/09 21:04:05 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_strlist_print(t_strlist *lst)
 {
 	if (!lst)
 		return ;
-	lst = lst;
 	while (lst)
 	{
 		ft_printf("%s", lst->str);

@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:06:19 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/09/24 22:23:26 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/09/28 20:52:47 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,9 @@ t_file		*ft_create_file_from_fd(int fd);
 void		ft_file_clear(t_file **lst);
 void		ft_file_print(t_file *lst);
 t_file		*ft_file_dup(t_file *old_file);
+
+char		**ft_create_str_rectangular_array(int x, int y);
+void		ft_free_str_rectangular_array(char **array, int y);
+char		*ft_strncpy(char *dst, const char *src, size_t len);
 
 #endif
