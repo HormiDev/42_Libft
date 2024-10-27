@@ -6,7 +6,7 @@
 #    By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2024/10/12 21:33:48 by ide-dieg         ###   ########.fr        #
+#    Updated: 2024/10/26 22:14:37 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,6 +88,7 @@ SRC_ADDITIONAL =	additional/42_ft_printf/ft_strlen_int.c \
 					additional/add/ft_create_str_rectangular_array.c \
 					additional/add/ft_strncpy.c \
 					additional/add/ft_free_split.c \
+					additional/add/fts_alloc_lst.c \
 
 # Objetos generados a partir de los archivos fuente
 OBJ = $(SRC:.c=.o)
