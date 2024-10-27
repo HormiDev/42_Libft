@@ -6,7 +6,7 @@
 #    By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2024/10/26 22:14:37 by ide-dieg         ###   ########.fr        #
+#    Updated: 2024/10/27 12:02:08 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,12 +90,13 @@ SRC_ADDITIONAL =	additional/42_ft_printf/ft_strlen_int.c \
 					additional/add/ft_free_split.c \
 					additional/add/fts_alloc_lst.c \
 
-# Objetos generados a partir de los archivos fuente
-OBJ = $(SRC:.c=.o)
-
 # Regla para compilar los archivos fuente
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo -n "█";
+
+# Objetos generados a partir de los archivos fuente
+OBJ = $(SRC:.c=.o)
 
 # Objetos generados a partir de los archivos fuente de la parte bonus
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
@@ -103,38 +104,76 @@ OBJ_BONUS = $(SRC_BONUS:.c=.o)
 # Objetos generados a partir de los archivos fuente adicionales
 OBJ_ADDITIONAL = $(SRC_ADDITIONAL:.c=.o)
 
-# Regla para construir el archivo de salida
-all:  $(OBJ)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
-	ranlib $(NAME)
+# Regla por defecto
+all: ide-dieg libft_title $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL)
+	@if [ ! -f $(NAME) ]; then \
+		$(AR) $(ARFLAGS) $(NAME) $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL); \
+		ranlib $(NAME); \
+		echo "$(NAME) compiled"; \
+	else \
+		echo "$(NAME) is already compiled"; \
+	fi
 
-# Regla para construir la parte bonus
-bonus: $(OBJ_BONUS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJ_BONUS)
-	ranlib $(NAME)
+# Regla para compilar todos los archivos fuente
+$(NAME): $(ide-dieg) $(libft_title) $(OBJ)
+	@if [ ! -f $(NAME) ]; then \
+		$(AR) $(ARFLAGS) $(NAME) $(OBJ); \
+		ranlib $(NAME); \
+		echo "$(NAME) compiled"; \
+	else \
+		echo "$(NAME) is already compiled"; \
+	fi
 
-# Regla para construir todos los archivos fuente
-additional: $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL)
-	ranlib $(NAME)
+# Regla para compilar los archivos fuente de la parte bonus
+bonus: $(ide-dieg) $(libft_title) $(OBJ_BONUS)
+	@if [ ! -f $(NAME) ]; then \
+		$(AR) $(ARFLAGS) $(NAME) $(OBJ_BONUS); \
+		ranlib $(NAME); \
+		echo "$(NAME) compiled"; \
+	else \
+		echo "$(NAME) is already compiled"; \
+	fi
 
-
-# Alias para la regla all
-libft.a: $(NAME)
-
-# Regla para limpiar los archivos objeto
+# Regla para compilar los archivos fuente adicionales
 clean:
 	rm -f $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL)
 
-# Regla para limpiar los archivos objeto y el archivo de salida
+# Regla para eliminar los archivos objeto y el archivo de salida
 fclean:
 	rm -f $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL) $(NAME)
 
-# Regla para reconstruir el proyecto desde cero
+# Regla para recompilar todo
 re: fclean all
 
-# Regla para reconstruir el proyecto desde cero con la parte bonus
+# Regla para recompilar la parte bonus
 rebonus: fclean bonus
 
-# Regla para reconstruir el proyecto desde cero con la parte adicional
-readditional: fclean additional
+# Regla para recompilar los archivos fuente adicionales
+re$(NAME): fclean $(NAME)
+
+ROJO = \033[0;31m
+NC = \033[0m
+NARANJA = \033[0;33m
+AZUL = \033[0;34m
+VERDE = \033[0;32m
+
+ide-dieg:
+	@clear	
+	@echo "$(ROJO)██╗██████╗ ███████╗    ██████╗ ██╗███████╗ ██████╗ $(AZUL)         ██╗  ██╗██████╗ "
+	@echo "$(ROJO)██║██╔══██╗██╔════╝    ██╔══██╗██║██╔════╝██╔════╝ $(AZUL)         ██║  ██║╚════██╗"
+	@echo "$(ROJO)██║██║  ██║█████╗█████╗██║  ██║██║█████╗  ██║  ███╗$(AZUL)         ███████║ █████╔╝"
+	@echo "$(ROJO)██║██║  ██║██╔══╝╚════╝██║  ██║██║██╔══╝  ██║   ██║$(AZUL)         ╚════██║██╔═══╝ "
+	@echo "$(ROJO)██║██████╔╝███████╗    ██████╔╝██║███████╗╚██████╔╝$(AZUL)              ██║███████╗"
+	@echo "$(ROJO)╚═╝╚═════╝ ╚══════╝    ╚═════╝ ╚═╝╚══════╝ ╚═════╝ $(AZUL)              ╚═╝╚══════╝"
+	@echo "$(NARANJA)██╗  ██╗ ██████╗ ██████╗ ███╗   ███╗██╗██████╗ ███████╗██╗   ██╗$(VERDE)       ██╗  "
+	@echo "$(NARANJA)██║  ██║██╔═══██╗██╔══██╗████╗ ████║██║██╔══██╗██╔════╝██║   ██║$(VERDE)   ██╗ ╚═██╗"
+	@echo "$(NARANJA)███████║██║   ██║██████╔╝██╔████╔██║██║██║  ██║█████╗  ██║   ██║$(VERDE)   ╚═╝   ██║"
+	@echo "$(NARANJA)██╔══██║██║   ██║██╔══██╗██║╚██╔╝██║██║██║  ██║██╔══╝  ╚██╗ ██╔╝$(VERDE)   ██╗   ██║"
+	@echo "$(NARANJA)██║  ██║╚██████╔╝██║  ██║██║ ╚═╝ ██║██║██████╔╝███████╗ ╚████╔╝ $(VERDE)   ╚═╝ ██╔═╝ "
+	@echo "$(NARANJA)╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚═════╝ ╚══════╝  ╚═══╝  $(VERDE)       ╚═╝  $(NC)"
+
+libft_title:
+	@echo " __    __  ____  ____  ____ "
+	@echo "(  )  (  )(  _ \(  __)(_  _)"
+	@echo "/ (_/\ )(  ) _ ( ) _)   )(  "
+	@echo "\____/(__)(____/(__)   (__) "
