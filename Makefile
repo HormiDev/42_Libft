@@ -6,7 +6,7 @@
 #    By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2024/10/27 12:02:08 by ide-dieg         ###   ########.fr        #
+#    Updated: 2024/10/27 12:12:45 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,8 +92,10 @@ SRC_ADDITIONAL =	additional/42_ft_printf/ft_strlen_int.c \
 
 # Regla para compilar los archivos fuente
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
-	@echo -n "█";
+	@if [ ! -f $(NAME) ]; then \
+		$(CC) $(CFLAGS) -c $< -o $@; \
+		echo -n "█"; \
+	fi
 
 # Objetos generados a partir de los archivos fuente
 OBJ = $(SRC:.c=.o)
@@ -115,7 +117,7 @@ all: ide-dieg libft_title $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL)
 	fi
 
 # Regla para compilar todos los archivos fuente
-$(NAME): $(ide-dieg) $(libft_title) $(OBJ)
+$(NAME): ide-dieg libft_title $(OBJ)
 	@if [ ! -f $(NAME) ]; then \
 		$(AR) $(ARFLAGS) $(NAME) $(OBJ); \
 		ranlib $(NAME); \
@@ -125,7 +127,7 @@ $(NAME): $(ide-dieg) $(libft_title) $(OBJ)
 	fi
 
 # Regla para compilar los archivos fuente de la parte bonus
-bonus: $(ide-dieg) $(libft_title) $(OBJ_BONUS)
+bonus: ide-dieg libft_title $(OBJ_BONUS)
 	@if [ ! -f $(NAME) ]; then \
 		$(AR) $(ARFLAGS) $(NAME) $(OBJ_BONUS); \
 		ranlib $(NAME); \
@@ -136,11 +138,13 @@ bonus: $(ide-dieg) $(libft_title) $(OBJ_BONUS)
 
 # Regla para compilar los archivos fuente adicionales
 clean:
-	rm -f $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL)
+	@rm -f $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL)
+	@echo "Objects removed"
 
 # Regla para eliminar los archivos objeto y el archivo de salida
 fclean:
-	rm -f $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL) $(NAME)
+	@rm -f $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL) $(NAME)
+	@echo "Objects and $(NAME) removed"
 
 # Regla para recompilar todo
 re: fclean all
