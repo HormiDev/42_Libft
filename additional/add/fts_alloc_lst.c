@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 19:11:58 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/10/26 22:13:19 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/11/08 03:42:07 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,25 @@
  * @param size Tamaño de la memoria a reservar.
  * @return void* Puntero con la memoria reservada o NULL en caso de error.
  */
-void	*ft_malloc_lst(t_list *lst, size_t size)
+void	*ft_malloc_lst(t_list **lst, size_t size)
 {
 	t_list	*new;
 
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 	{
-		ft_lstclear(&lst, free);
+		ft_lstclear(lst, free);
 		return (0);
 	}
 	new->content = malloc(size);
 	if (!new->content)
 	{
 		free(new);
-		ft_lstclear(&lst, free);
+		ft_lstclear(lst, free);
 		return (0);
 	}
 	new->next = 0;
-	ft_lstadd_back(&lst, new);
+	ft_lstadd_back(lst, new);
 	return (new->content);
 }
 
@@ -51,25 +51,25 @@ void	*ft_malloc_lst(t_list *lst, size_t size)
 * @param size Tamaño de la memoria a reservar.
 * @return void* Puntero con la memoria reservada o NULL en caso de error.
 */
-void	*ft_calloc_lst(t_list *lst, size_t size)
+void	*ft_calloc_lst(t_list **lst, size_t size)
 {
 	t_list	*new;
 
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 	{
-		ft_lstclear(&lst, free);
+		ft_lstclear(lst, free);
 		return (0);
 	}
 	new->content = ft_calloc(1, size);
 	if (!new->content)
 	{
 		free(new);
-		ft_lstclear(&lst, free);
+		ft_lstclear(lst, free);
 		return (0);
 	}
 	new->next = 0;
-	ft_lstadd_back(&lst, new);
+	ft_lstadd_back(lst, new);
 	return (new->content);
 }
 
@@ -82,14 +82,14 @@ void	*ft_calloc_lst(t_list *lst, size_t size)
  * @param size Tamaño de la memoria a reservar.
  * @return void* Puntero con la memoria reservada.
  */
-void	*ft_malloc_lst_e(t_list *lst, size_t size)
+void	*ft_malloc_lst_e(t_list **lst, size_t size)
 {
 	t_list	*new;
 
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 	{
-		ft_lstclear(&lst, free);
+		ft_lstclear(lst, free);
 		ft_putstr_fd("\e[31mError\n\e[33mMalloc failed\n\e[0m", 2);
 		exit(1);
 	}
@@ -97,12 +97,12 @@ void	*ft_malloc_lst_e(t_list *lst, size_t size)
 	if (!new->content)
 	{
 		free(new);
-		ft_lstclear(&lst, free);
+		ft_lstclear(lst, free);
 		ft_putstr_fd("\e[31mError\n\e[33mMalloc failed\n\e[0m", 2);
 		exit(1);
 	}
 	new->next = 0;
-	ft_lstadd_back(&lst, new);
+	ft_lstadd_back(lst, new);
 	return (new->content);
 }
 
@@ -115,14 +115,14 @@ void	*ft_malloc_lst_e(t_list *lst, size_t size)
  * @param size Tamaño de la memoria a reservar.
  * @return void* Puntero con la memoria reservada.
  */
-void	*ft_calloc_lst_e(t_list *lst, size_t size)
+void	*ft_calloc_lst_e(t_list **lst, size_t size)
 {
 	t_list	*new;
 
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 	{
-		ft_lstclear(&lst, free);
+		ft_lstclear(lst, free);
 		ft_putstr_fd("\e[31mError\n\e[33mMalloc failed\n\e[0m", 2);
 		exit(1);
 	}
@@ -130,12 +130,12 @@ void	*ft_calloc_lst_e(t_list *lst, size_t size)
 	if (!new->content)
 	{
 		free(new);
-		ft_lstclear(&lst, free);
+		ft_lstclear(lst, free);
 		ft_putstr_fd("\e[31mError\n\e[33mMalloc failed\n\e[0m", 2);
 		exit(1);
 	}
 	new->next = 0;
-	ft_lstadd_back(&lst, new);
+	ft_lstadd_back(lst, new);
 	return (new->content);
 }
 
@@ -164,13 +164,13 @@ void	*ft_alloc_lst(size_t size, int n_func)
 		return (0);
 	}
 	if (n_func == 1)
-		return (ft_malloc_lst(lst, size));
+		return (ft_malloc_lst(&lst, size));
 	if (n_func == 2)
-		return (ft_calloc_lst(lst, size));
+		return (ft_calloc_lst(&lst, size));
 	if (n_func == 3)
-		return (ft_malloc_lst_e(lst, size));
+		return (ft_malloc_lst_e(&lst, size));
 	if (n_func == 4)
-		return (ft_calloc_lst_e(lst, size));
+		return (ft_calloc_lst_e(&lst, size));
 	ft_lstclear(&lst, free);
 	return (0);
 }
