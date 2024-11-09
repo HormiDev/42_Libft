@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 19:11:58 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/11/08 03:42:07 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/11/09 22:09:06 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,13 +146,14 @@ void	*ft_calloc_lst_e(t_list **lst, size_t size)
 * 
 * @param size Tamaño de la memoria a reservar.
 * @param n_func Número de la función a ejecutar.
-* 0: Libera la memoria de la lista.
-* 1: Reserva memoria con malloc.
-* 2: Reserva memoria con calloc.
-* 3: Reserva memoria con malloc y finaliza el programa en caso de error.
-* 4: Reserva memoria con calloc y finaliza el programa en caso de error.
-* @return void* Puntero con la memoria reservada o NULL en caso de error o
-* `n_func` no válido.
+* `<= 0:` Libera la memoria de la lista.
+* `1:` Reserva memoria con malloc.
+* `2:` Reserva memoria con calloc.
+* `3:` Reserva memoria con malloc y finaliza el programa en caso de error.
+* `4:` Reserva memoria con calloc y finaliza el programa en caso de error.
+* `>= 5:` Devuelve la lista.
+* @return `void*` Puntero con la memoria reservada, NULL en caso de error o
+* `n_func` no válido o la lista en caso de `n_func` no válido.
 */
 void	*ft_alloc_lst(size_t size, int n_func)
 {
@@ -171,6 +172,7 @@ void	*ft_alloc_lst(size_t size, int n_func)
 		return (ft_malloc_lst_e(&lst, size));
 	if (n_func == 4)
 		return (ft_calloc_lst_e(&lst, size));
-	ft_lstclear(&lst, free);
+	if (lst)
+		return (lst);
 	return (0);
 }
