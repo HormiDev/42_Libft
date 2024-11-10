@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fts_strlist.c                                      :+:      :+:    :+:   */
+/*   fts_t_strlist.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:09:33 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/09/22 21:32:37 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/11/10 19:23:01 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ t_strlist	*ft_strlist_add_new_dup(t_strlist *lst, char *str)
 		return (0);
 	}
 	new->str = ft_strdup(str);
-	new->len = ft_strlen2(str);
+	new->len = ft_strlen_p(str);
 	new->next = 0;
 	if (!lst)
 		return (new);

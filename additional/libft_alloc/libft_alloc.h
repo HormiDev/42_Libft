@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_protected.h                                  :+:      :+:    :+:   */
+/*   libft_alloc.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 16:06:07 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/11/10 18:09:04 by ide-dieg         ###   ########.fr       */
+/*   Created: 2024/11/10 14:29:11 by ide-dieg          #+#    #+#             */
+/*   Updated: 2024/11/10 19:17:15 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_PROTECTED_H
-# define LIBFT_PROTECTED_H
+#ifndef LIBFT_ALLOC_H
+# define LIBFT_ALLOC_H
 
 # include "../../libft.h"
 
-size_t	ft_strlen_p(const char *str);
-char	*ft_strdup_p(const char *s1);
-char	*ft_strjoin_p(char const *s1, char const *s2);
-size_t	ft_strlcpy_p(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlcat_p(char *dst, const char *src, size_t dstsize);
-char	**ft_split_p(char const *s, char c);
-char	*ft_substr_p(char const *s, unsigned int start, size_t len);
+char	*ft_substr_a(char const *s, unsigned int start, size_t len);
+char	*ft_substr_ae(char const *s, unsigned int start, size_t len);
+char	*ft_strdup_a(const char *s1);
+char	*ft_strdup_ae(const char *s1);
+char	*ft_strjoin_a(char const *s1, char const *s2);
+char	*ft_strjoin_ae(char const *s1, char const *s2);
+char	**ft_split_a(char const *s, char c);
+char	**ft_split_ae(char const *s, char c);
 
 #endif

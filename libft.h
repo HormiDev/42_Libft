@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:02:07 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/10/27 10:01:45 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:48:27 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "additional/42_get_next_line/get_next_line.h"
 # include "additional/add/add.h"
 # include "additional/libft_protected/libft_protected.h"
+# include "additional/libft_alloc/libft_alloc.h"
 
 typedef struct s_list
 {

@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen2.c                                       :+:      :+:    :+:   */
+/*   ft_strlen_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 16:15:27 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/09/22 17:06:42 by ide-dieg         ###   ########.fr       */
+/*   Created: 2024/11/10 14:34:52 by ide-dieg          #+#    #+#             */
+/*   Updated: 2024/11/10 14:54:06 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_protected.h"
 
-size_t	ft_strlen2(const char *str)
+/**
+* @brief Version de 'ft_strlen' que se protege de un puntero nulo.
+*
+* @param str Cadena de caracteres.
+* @return size_t Longitud de la cadena.
+*/
+size_t	ft_strlen_p(const char *str)
 {
 	size_t	cont;
 

@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 15:42:15 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/10/09 21:04:05 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/11/10 19:24:40 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ t_strlist	*ft_strlist_add_new(t_strlist *lst, char *str)
 		return (0);
 	}
 	new->str = str;
-	new->len = ft_strlen2(str);
+	new->len = ft_strlen_p(str);
 	new->next = 0;
 	if (!lst)
 		return (new);
@@ -84,7 +84,7 @@ void	ft_strlist_change(t_strlist *lst, char *str)
 		return ;
 	free(lst->str);
 	lst->str = str;
-	lst->len = ft_strlen2(str);
+	lst->len = ft_strlen_p(str);
 }
 
 /**
