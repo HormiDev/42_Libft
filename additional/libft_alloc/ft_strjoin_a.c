@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 17:45:02 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/11/10 18:10:28 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:50:45 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 char	*ft_strjoin_a(char const *s1, char const *s2)
 {
 	char	*str;
-	int 	s1len;
-	int 	s2len;
+	int		s1len;
+	int		s2len;
 
 	if (!s1 && !s2)
 		return (0);
@@ -41,6 +41,7 @@ char	*ft_strjoin_a(char const *s1, char const *s2)
 	ft_strlcat_p(str, s2, s1len + s2len + 1);
 	return (str);
 }
+
 /**
 * @brief Version de 'ft_strjoin' que reserva memoria con 'ft_alloc_lst'
 * liberando la memoria de la lista en caso de error y finalizando el programa.
@@ -52,8 +53,8 @@ char	*ft_strjoin_a(char const *s1, char const *s2)
 char	*ft_strjoin_ae(char const *s1, char const *s2)
 {
 	char	*str;
-	int 	s1len;
-	int 	s2len;
+	int		s1len;
+	int		s2len;
 
 	if (!s1 && !s2)
 		return (0);

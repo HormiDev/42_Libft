@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 16:35:40 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/11/10 17:41:31 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:51:32 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 char	*ft_strjoin_p(char const *s1, char const *s2)
 {
 	char	*str;
-	int 	s1len;
-	int 	s2len;
+	int		s1len;
+	int		s2len;
 
 	if (!s1 && !s2)
 		return (0);
@@ -33,7 +33,7 @@ char	*ft_strjoin_p(char const *s1, char const *s2)
 		return (ft_strdup_p(s1));
 	s1len = ft_strlen_p(s1);
 	s2len = ft_strlen_p(s2);
-	str = malloc((s1len +s2len + 1) * sizeof(char));
+	str = malloc((s1len + s2len + 1) * sizeof(char));
 	if (str == 0)
 		return (0);
 	ft_strlcpy_p(str, s1, s1len + 1);
