@@ -59,6 +59,7 @@ void		ft_strlist_change_dup(t_strlist *lst, char *str);
 void		ft_strlist_change(t_strlist *lst, char *str);
 void		ft_strlist_print(t_strlist *lst);
 char		**ft_strlist_to_array(t_strlist *lst);
+char		*ft_input(char *msg);
 
 t_file		*ft_create_file_from_filename(char *filename);
 t_file		*ft_create_file_from_fd(int fd);
