@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:06:19 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/12/02 17:31:12 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/12/07 22:14:38 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void		ft_strlist_change(t_strlist *lst, char *str);
 void		ft_strlist_print(t_strlist *lst);
 char		**ft_strlist_to_array(t_strlist *lst);
 char		*ft_input(char *msg);
+long		ft_atol(const char *str);
 
 t_file		*ft_create_file_from_filename(char *filename);
 t_file		*ft_create_file_from_fd(int fd);

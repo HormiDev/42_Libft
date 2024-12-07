@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_splitlen.c                                      :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 17:29:50 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/12/07 22:15:47 by ide-dieg         ###   ########.fr       */
+/*   Created: 2024/12/07 22:13:30 by ide-dieg          #+#    #+#             */
+/*   Updated: 2024/12/07 22:15:12 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "add.h"
 
-int	ft_splitlen(char **split)
+long	ft_atol(const char *str)
 {
-	int	i;
+	long	num;
+	int		cont;
+	int		mult;
 
-	if (!split)
-		return (0);
-	i = 0;
-	while (split[i])
-		i++;
-	return (i);
+	num = 0;
+	cont = 0;
+	mult = 1;
+	while (str[cont] == ' ' || (str[cont] >= '\t' && str[cont] <= '\r'))
+		cont++;
+	if (str[cont] == '-')
+		mult = -1;
+	if (str[cont] == '-' || str[cont] == '+')
+		cont++;
+	while (ft_isdigit(str[cont]))
+	{
+		num = num * 10 + (str[cont] - 48);
+		cont++;
+	}
+	return (num * mult);
 }
