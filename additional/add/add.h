@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:06:19 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/12/08 03:38:36 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/12/11 15:51:42 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,21 @@ typedef struct s_file
 	int			lines;
 }	t_file;
 
+/**
+ * @file add.h
+ * @brief Definición de la estructura `s_list_dbl`.
+ * 
+ * La estructura `s_list_dbl` representa un nodo de una lista doblemente 
+ * enlazada. Cada nodo contiene un puntero a un contenido, un puntero al 
+ * siguiente nodo y un puntero al nodo anterior.
+ */
+typedef struct s_list_dbl
+{
+	void				*content;
+	struct s_list_dbl	*next;
+	struct s_list_dbl	*prev;
+}	t_list_dbl;
+
 t_strlist	*ft_strlist_add_new_dup(t_strlist *lst, char *str);
 t_strlist	*ft_strlist_add_new(t_strlist *lst, char *str);
 void		ft_strlist_clear(t_strlist **lst);
@@ -80,5 +95,18 @@ void		*ft_calloc_lst(t_list **lst, size_t size);
 void		*ft_malloc_lst_e(t_list **lst, size_t size);
 void		*ft_calloc_lst_e(t_list **lst, size_t size);
 void		*ft_alloc_lst(size_t size, int n_func);
+
+t_list_dbl	*ft_list_dbl_new(void *content);
+void		ft_list_dbl_add_front(t_list_dbl **lst, t_list_dbl *new);
+void		ft_list_dbl_add_back(t_list_dbl **lst, t_list_dbl *new);
+t_list_dbl	*ft_list_dbl_addnew_front(t_list_dbl **lst, void *content);
+t_list_dbl	*ft_list_dbl_addnew_back(t_list_dbl **lst, void *content);
+void		ft_list_dbl_add_prev(t_list_dbl *lst, t_list_dbl *new);
+void		ft_list_dbl_add_next(t_list_dbl *lst, t_list_dbl *new);
+void		ft_list_dbl_delone(t_list_dbl **lst, void (*del)(void *));
+void		ft_list_dbl_clear(t_list_dbl **lst, void (*del)(void *));
+t_list_dbl	*ft_list_dbl_get_last(t_list_dbl *lst);
+t_list_dbl	*ft_list_dbl_get_first(t_list_dbl *lst);
+int			ft_list_dbl_size(t_list_dbl *lst);
 
 #endif
