@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:06:19 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/12/11 15:51:42 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/12/13 18:52:15 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,6 @@ void		ft_list_dbl_clear(t_list_dbl **lst, void (*del)(void *));
 t_list_dbl	*ft_list_dbl_get_last(t_list_dbl *lst);
 t_list_dbl	*ft_list_dbl_get_first(t_list_dbl *lst);
 int			ft_list_dbl_size(t_list_dbl *lst);
+int			ft_list_dbl_get_position_node(t_list_dbl *node);
 
 #endif
