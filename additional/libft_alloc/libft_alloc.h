@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 14:29:11 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/11/10 19:17:15 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2024/12/19 23:39:40 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_ALLOC_H
 
 # include "../../libft.h"
+
+typedef struct s_list	t_list;
 
 char	*ft_substr_a(char const *s, unsigned int start, size_t len);
 char	*ft_substr_ae(char const *s, unsigned int start, size_t len);
@@ -23,5 +25,7 @@ char	*ft_strjoin_a(char const *s1, char const *s2);
 char	*ft_strjoin_ae(char const *s1, char const *s2);
 char	**ft_split_a(char const *s, char c);
 char	**ft_split_ae(char const *s, char c);
+t_list	*ft_lstnew_a(void *content);
+t_list	*ft_lstnew_ae(void *content);
 
 #endif

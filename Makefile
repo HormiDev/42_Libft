@@ -6,7 +6,7 @@
 #    By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2024/12/11 15:53:37 by ide-dieg         ###   ########.fr        #
+#    Updated: 2024/12/19 23:38:49 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,6 +108,7 @@ SRC_ADDITIONAL =	additional/42_ft_printf/ft_strlen_int.c \
 					additional/libft_alloc/ft_strdup_a.c \
 					additional/libft_alloc/ft_strjoin_a.c \
 					additional/libft_alloc/ft_substr_a.c \
+					additional/libft_alloc/ft_lstnew_a.c \
 
 # Regla para compilar los archivos fuente
 %.o: %.c
