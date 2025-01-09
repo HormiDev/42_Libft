@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 16:06:07 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/11/10 18:09:04 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/01/08 17:51:57 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ size_t	ft_strlcpy_p(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat_p(char *dst, const char *src, size_t dstsize);
 char	**ft_split_p(char const *s, char c);
 char	*ft_substr_p(char const *s, unsigned int start, size_t len);
+int		ft_strncmp_p(const char *s1, const char *s2, size_t n);
 
 #endif
