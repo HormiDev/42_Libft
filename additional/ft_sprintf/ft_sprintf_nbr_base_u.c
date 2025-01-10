@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 00:27:15 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/01/09 01:50:38 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:28:45 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ void	ft_sprintf_nbr_base_u(char *str, int *len, unsigned long n, char *base)
 		ft_sprintf_nbr_base_u(str, len, n / lenbase, base);
 		n = n % lenbase;
 	}
-	else
-	{
-		str[*len] = base[n] + '0';
-		(*len)++;
-	}
+	str[*len] = base[n];
+	(*len)++;
 }

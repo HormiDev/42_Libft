@@ -6,16 +6,12 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 21:06:11 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/01/09 01:56:49 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:32:09 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_SPRINTF_H
 # define FT_SPRINTF_H
-
-#define HEXA "0123456789ABCDEF"
-#define HEXA_MIN "0123456789abcdef"
-#define DECIMAL "0123456789"
 
 # include "../../libft.h"
 
