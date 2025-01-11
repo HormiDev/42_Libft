@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 21:18:12 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/01/09 13:32:48 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:30:28 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@ void	ft_sprintf_str(char *str, int *len, char *s)
 	int	i;
 
 	i = 0;
-	while (s[i] != 0)
+	if (s)
 	{
-		str[*len] = s[i];
-		(*len)++;
-		i++;
+		ft_strncpy(str + *len, s, ft_strlen(s));
+		*len += ft_strlen(s);
+	}
+	else
+	{
+		ft_strncpy(str + *len, "(null)", 6);
+		*len += 6;
 	}
 }
