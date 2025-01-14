@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 21:18:12 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/01/11 18:30:28 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/01/14 23:25:49 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_sprintf_str(char *str, int *len, char *s)
 {
-	int	i;
-
-	i = 0;
 	if (s)
 	{
 		ft_strncpy(str + *len, s, ft_strlen(s));
