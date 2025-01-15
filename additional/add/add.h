@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:06:19 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/01/13 18:04:35 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/01/15 21:01:56 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,8 @@ void		*ft_malloc_lst_e(t_list **lst, size_t size);
 void		*ft_calloc_lst_e(t_list **lst, size_t size);
 void		*ft_alloc_lst(size_t size, int n_func);
 void		ft_free_alloc(void *ptr);
+void		*ft_add_to_alloc_lst(void *content);
+void		*ft_add_to_alloc_lst_e(void *content);
 
 t_list_dbl	*ft_list_dbl_new(void *content);
 void		ft_list_dbl_add_front(t_list_dbl **lst, t_list_dbl *new);
