@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 21:05:52 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/01/10 19:31:10 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/01/20 02:15:47 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static int	ft_conversion(char *str, int *len, const char *format, va_list varg)
  * Además, `ft_sprintf` soporta los siguientes modificadores:
  * - `%ld` para escribir un número entero largo.
  * 
- * `AVISO`: la funcion no aloca memoria, por lo que el string `str` debe tener
+ * @warning La función no aloca memoria, por lo que el string `str` debe tener
  * suficiente espacio para escribir el resultado o podría ocasionar un error de
  * desbordamiento de buffer.
  * 
@@ -89,6 +89,7 @@ static int	ft_conversion(char *str, int *len, const char *format, va_list varg)
  * @param format El formato del string a escribir.
  * @param ... Argumentos variables que se escribirán en el string `str` bajo el
  * formato especificado en `format`.
+ * @return El número de caracteres escritos en el string `str`.
  */
 int	ft_sprintf(char *str, const char *format, ...)
 {

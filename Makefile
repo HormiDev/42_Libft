@@ -6,7 +6,7 @@
 #    By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2025/01/18 16:57:00 by ide-dieg         ###   ########.fr        #
+#    Updated: 2025/01/20 03:29:33 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,6 +119,10 @@ SRC_ADDITIONAL =	additional/42_ft_printf/ft_strlen_int.c \
 					additional/ft_sprintf/ft_sprintf_str.c \
 					additional/ft_sprintf/ft_sprintf_nbr_base.c \
 					additional/ft_sprintf/ft_sprintf_nbr_base_u.c \
+					additional/ft_dprintf/ft_dprintf.c \
+					additional/ft_dprintf/ft_dprintf_str.c \
+					additional/ft_dprintf/ft_dprintf_nbr_base.c \
+					additional/ft_dprintf/ft_dprintf_nbr_base_u.c \
 
 # Regla para compilar los archivos fuente
 %.o: %.c
