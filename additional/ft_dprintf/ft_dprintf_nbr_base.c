@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 03:04:08 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/01/20 03:26:39 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/01/20 22:02:20 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static long	ft_mult(long n, int lenbase)
 	long	mult;
 
 	mult = 1;
-	while (n / mult >= lenbase)
+	while (n / mult <= -lenbase)
 		mult = mult * lenbase;
 	return (mult);
 }
@@ -28,16 +28,16 @@ int	ft_dprintf_nbr_base(int fd, long n, char *base)
 	long	mult;
 	int		len;
 
+	len = 0;
 	lenbase = ft_strlen_p(base);
 	if (n < 0)
 	{
 		if (write(fd, "-", 1) < 0)
 			return (-1);
 		len = 1;
-		n = -n;
 	}
 	else
-		len = 0;
+		n = -n;
 	mult = ft_mult(n, lenbase);
 	while (mult >= lenbase)
 	{
