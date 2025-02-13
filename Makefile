@@ -6,7 +6,7 @@
 #    By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2025/01/20 03:29:33 by ide-dieg         ###   ########.fr        #
+#    Updated: 2025/02/13 20:43:12 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,6 +99,7 @@ SRC_ADDITIONAL =	additional/42_ft_printf/ft_strlen_int.c \
 					additional/add/fts_t_list_dbl_new.c \
 					additional/add/ft_free_alloc.c \
 					additional/add/ft_add_to_alloc_lst.c \
+					additional/add/ft_free_alloc_lst_clear.c \
 					additional/libft_protected/ft_strlen_p.c \
 					additional/libft_protected/ft_strjoin_p.c \
 					additional/libft_protected/ft_strlcat_p.c \
