@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 14:33:28 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/11/10 18:08:19 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:51:26 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*ft_substr_ae(char const *s, unsigned int start, size_t len)
 		return (ft_strdup_ae(""));
 	else if (s_len - start < len)
 		len = s_len - start;
-	str = ft_alloc_lst(len + 1, 2);
+	str = ft_alloc_lst(len + 1, 3);
 	if (str == 0)
 		return (0);
 	while (cont < len)
