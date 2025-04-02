@@ -6,9 +6,12 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:49:20 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/01/09 13:28:18 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/02 16:04:39 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft_protected.h"
+
 
 #include "libft_protected.h"
 
@@ -17,8 +20,12 @@ int	ft_strncmp_p(const char *s1, const char *s2, size_t n)
 	size_t	cont;
 
 	cont = 0;
-	if (s1 == 0 || s2 == 0)
+	if (s1 == 0 && s2 == 0)
 		return (0);
+	if (s1 == 0)
+		return (-1);
+	if (s2 == 0)
+		return (1);
 	while (cont < n)
 	{
 		if (s1[cont] != s2[cont])
