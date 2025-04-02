@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 16:06:07 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/01/18 16:57:26 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/02 19:17:35 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ char	**ft_split_p(char const *s, char c);
 char	*ft_substr_p(char const *s, unsigned int start, size_t len);
 int		ft_strncmp_p(const char *s1, const char *s2, size_t n);
 int		ft_atoi_p(const char *str);
+char	*ft_strnstr_p(const char *haystack, const char *needle, size_t len);
+char	*ft_strchr_p(const char *str, int c);
 
 #endif

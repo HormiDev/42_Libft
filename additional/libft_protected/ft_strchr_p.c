@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp_p.c                                     :+:      :+:    :+:   */
+/*   ft_strchr_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 17:49:20 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/02 19:55:31 by ide-dieg         ###   ########.fr       */
+/*   Created: 2025/04/02 19:09:11 by ide-dieg          #+#    #+#             */
+/*   Updated: 2025/04/02 19:17:20 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_protected.h"
 
-int	ft_strncmp_p(const char *s1, const char *s2, size_t n)
+/**
+* @brief Version protegida de 'ft_strchr' en C.
+* 
+* @param str Cadena de caracteres.
+* @param c Caracter a buscar.
+* @return char* Devuelve un puntero al primer carácter 'c' en 'str', o NULL si
+* 'c' no está en 'str'.
+*/
+char	*ft_strchr_p(const char *str, int c)
 {
-	size_t	cont;
+	char	cchar;
 
-	cont = 0;
-	if (s1 == 0 && s2 == 0)
+	if (!str)
 		return (0);
-	if (s1 == 0)
-		return (-1);
-	if (s2 == 0)
-		return (1);
-	while (cont < n)
+	cchar = (char)c;
+	while (*str != '\0')
 	{
-		if (s1[cont] != s2[cont])
-			return ((unsigned char)s1[cont] - (unsigned char)s2[cont]);
-		else if (s1[cont] == 0)
-			return (0);
-		cont++;
+		if (*str == cchar)
+			return ((char *)str);
+		str++;
 	}
+	if (cchar == '\0')
+		return ((char *)str);
 	return (0);
 }
