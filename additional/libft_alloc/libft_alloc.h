@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 14:29:11 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/12/19 23:39:40 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/03 14:12:33 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ char	**ft_split_a(char const *s, char c);
 char	**ft_split_ae(char const *s, char c);
 t_list	*ft_lstnew_a(void *content);
 t_list	*ft_lstnew_ae(void *content);
+char	**ft_split_chars_a(char const *s, char *c);
+char	**ft_split_chars_ae(char const *s, char *c);
 
 #endif
