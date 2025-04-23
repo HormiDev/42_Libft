@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 19:11:58 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/23 16:45:14 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/23 17:31:32 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,23 +157,23 @@ void	*ft_calloc_lst_e(t_list **lst, size_t size)
 */
 void	*ft_alloc_lst(size_t size, int n_func)
 {
-	t_list	*lst;
+	t_list	**lst;
 
 	lst = ft_get_alloc_lst(1);
 	if (n_func <= 0)
 	{
-		ft_lstclear(&lst, free);
+		ft_lstclear(lst, free);
 		return (0);
 	}
 	if (n_func == 1)
-		return (ft_malloc_lst(&lst, size));
+		return (ft_malloc_lst(lst, size));
 	if (n_func == 2)
-		return (ft_calloc_lst(&lst, size));
+		return (ft_calloc_lst(lst, size));
 	if (n_func == 3)
-		return (ft_malloc_lst_e(&lst, size));
+		return (ft_malloc_lst_e(lst, size));
 	if (n_func == 4)
-		return (ft_calloc_lst_e(&lst, size));
-	if (lst)
-		return (lst);
+		return (ft_calloc_lst_e(lst, size));
+	if (*lst)
+		return (*lst);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:06:19 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/23 17:02:59 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:07:05 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,12 +106,13 @@ void		*ft_alloc_lst(size_t size, int n_func);
 void		ft_free_alloc(void *ptr);
 void		*ft_add_to_alloc_lst(void *content);
 void		*ft_add_to_alloc_lst_e(void *content);
-void		*ft_get_alloc_lst(int n_list);
+t_list		**ft_get_alloc_lst(int n_list);
 void		*ft_alloc_clear(void);
 int			ft_open_fd_lst(int n_func, char *path, int flags, ...);
 void		ft_close_dirs(t_list *lst);
 int			ft_open_fd_lst_a(t_list **lst, char *path, int flags, ...);
 int			ft_open_fd_lst_ae(t_list **lst, char *path, int flags, ...);
+void		ft_close_alloc(int fd);
 
 t_list_dbl	*ft_list_dbl_new(void *content);
 void		ft_list_dbl_add_front(t_list_dbl **lst, t_list_dbl *new);

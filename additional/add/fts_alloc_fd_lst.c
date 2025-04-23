@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 17:06:26 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/23 17:02:50 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:12:36 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,36 +65,19 @@ void	ft_close_dirs(t_list *lst)
 
 int	ft_open_fd_lst(int n_func, char *path, int flags, ...)
 {
-	t_list	*lst;
+	t_list	**lst;
 	va_list	args;
 
 	lst = ft_get_alloc_lst(2);
 	va_start(args, flags);
 	if (n_func == 0)
 	{
-		ft_close_dirs(lst);
+		ft_close_dirs(*lst);
 		return (0);
 	}
 	if (n_func == 1)
-		return (ft_open_fd_lst_a(&lst, path, flags, args));
+		return (ft_open_fd_lst_a(lst, path, flags, args));
 	if (n_func == 2)
-		return (ft_open_fd_lst_ae(&lst, path, flags, args));
+		return (ft_open_fd_lst_ae(lst, path, flags, args));
 	return (-1);
-}
-
-void	ft_close_alloc(int fd)
-{
-	t_list	*lst;
-
-	lst = ft_get_alloc_lst(2);
-	while (lst)
-	{
-		if (*(int *)(lst->content) == fd)
-		{
-			close(*(int *)(lst->content));
-			ft_free_alloc(lst->content);
-			break ;
-		}
-		lst = lst->next;
-	}
 }
