@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   add.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
+/*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:06:19 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/02 19:49:37 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/23 13:45:01 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,12 @@ typedef struct s_list_dbl
 	struct s_list_dbl	*prev;
 }	t_list_dbl;
 
+typedef struct s_alloc
+{
+	t_list	*alloc_lst;
+	t_list	*fd_lst;
+}	t_alloc;
+
 t_strlist	*ft_strlist_add_new_dup(t_strlist *lst, char *str);
 t_strlist	*ft_strlist_add_new(t_strlist *lst, char *str);
 void		ft_strlist_clear(t_strlist **lst);
@@ -100,6 +106,12 @@ void		*ft_alloc_lst(size_t size, int n_func);
 void		ft_free_alloc(void *ptr);
 void		*ft_add_to_alloc_lst(void *content);
 void		*ft_add_to_alloc_lst_e(void *content);
+void		*ft_get_alloc_lst(int n_list);
+void		*ft_alloc_clear(void);
+int			ft_open_fd_lst(int n_func, char *path, int flags, ...);
+void		ft_close_dirs(t_list *lst);
+int			ft_open_fd_lst_a(t_list **lst, char *path, int flags, ...);
+int			ft_open_fd_lst_ae(t_list **lst, char *path, int flags, ...);
 
 t_list_dbl	*ft_list_dbl_new(void *content);
 void		ft_list_dbl_add_front(t_list_dbl **lst, t_list_dbl *new);

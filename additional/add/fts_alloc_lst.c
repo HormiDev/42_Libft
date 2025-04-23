@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fts_alloc_lst.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
+/*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 19:11:58 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/11/09 22:09:06 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/23 16:45:14 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ void	*ft_malloc_lst(t_list **lst, size_t size)
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 	{
-		ft_lstclear(lst, free);
+		ft_alloc_clear();
 		return (0);
 	}
 	new->content = malloc(size);
 	if (!new->content)
 	{
 		free(new);
-		ft_lstclear(lst, free);
+		ft_alloc_clear();
 		return (0);
 	}
 	new->next = 0;
@@ -58,14 +58,14 @@ void	*ft_calloc_lst(t_list **lst, size_t size)
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 	{
-		ft_lstclear(lst, free);
+		ft_alloc_clear();
 		return (0);
 	}
 	new->content = ft_calloc(1, size);
 	if (!new->content)
 	{
 		free(new);
-		ft_lstclear(lst, free);
+		ft_alloc_clear();
 		return (0);
 	}
 	new->next = 0;
@@ -89,7 +89,7 @@ void	*ft_malloc_lst_e(t_list **lst, size_t size)
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 	{
-		ft_lstclear(lst, free);
+		ft_alloc_clear();
 		ft_putstr_fd("\e[31mError\n\e[33mMalloc failed\n\e[0m", 2);
 		exit(1);
 	}
@@ -97,7 +97,7 @@ void	*ft_malloc_lst_e(t_list **lst, size_t size)
 	if (!new->content)
 	{
 		free(new);
-		ft_lstclear(lst, free);
+		ft_alloc_clear();
 		ft_putstr_fd("\e[31mError\n\e[33mMalloc failed\n\e[0m", 2);
 		exit(1);
 	}
@@ -122,7 +122,7 @@ void	*ft_calloc_lst_e(t_list **lst, size_t size)
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 	{
-		ft_lstclear(lst, free);
+		ft_alloc_clear();
 		ft_putstr_fd("\e[31mError\n\e[33mMalloc failed\n\e[0m", 2);
 		exit(1);
 	}
@@ -130,7 +130,7 @@ void	*ft_calloc_lst_e(t_list **lst, size_t size)
 	if (!new->content)
 	{
 		free(new);
-		ft_lstclear(lst, free);
+		ft_alloc_clear();
 		ft_putstr_fd("\e[31mError\n\e[33mMalloc failed\n\e[0m", 2);
 		exit(1);
 	}
@@ -157,8 +157,9 @@ void	*ft_calloc_lst_e(t_list **lst, size_t size)
 */
 void	*ft_alloc_lst(size_t size, int n_func)
 {
-	static t_list	*lst;
+	t_list	*lst;
 
+	lst = ft_get_alloc_lst(1);
 	if (n_func <= 0)
 	{
 		ft_lstclear(&lst, free);
