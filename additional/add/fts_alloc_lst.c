@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 19:11:58 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/23 17:31:32 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/24 19:41:30 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	*ft_malloc_lst_e(t_list **lst, size_t size)
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 	{
+		ft_exit_functions();
 		ft_alloc_clear();
 		ft_putstr_fd("\e[31mError\n\e[33mMalloc failed\n\e[0m", 2);
 		exit(1);
@@ -96,6 +97,7 @@ void	*ft_malloc_lst_e(t_list **lst, size_t size)
 	new->content = malloc(size);
 	if (!new->content)
 	{
+		ft_exit_functions();
 		free(new);
 		ft_alloc_clear();
 		ft_putstr_fd("\e[31mError\n\e[33mMalloc failed\n\e[0m", 2);
@@ -122,6 +124,7 @@ void	*ft_calloc_lst_e(t_list **lst, size_t size)
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 	{
+		ft_exit_functions();
 		ft_alloc_clear();
 		ft_putstr_fd("\e[31mError\n\e[33mMalloc failed\n\e[0m", 2);
 		exit(1);
@@ -129,6 +132,7 @@ void	*ft_calloc_lst_e(t_list **lst, size_t size)
 	new->content = ft_calloc(1, size);
 	if (!new->content)
 	{
+		ft_exit_functions();
 		free(new);
 		ft_alloc_clear();
 		ft_putstr_fd("\e[31mError\n\e[33mMalloc failed\n\e[0m", 2);

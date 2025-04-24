@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 19:44:16 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/24 12:57:10 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/24 19:46:20 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	*ft_add_to_alloc_lst_e(void *content)
 	alloc_lst = ft_alloc_lst(0, 5);
 	if (!content)
 	{
+		ft_exit_functions();
 		ft_alloc_lst(0, 0);
 		ft_putstr_fd("\e[31mError\n\e[33mMalloc failed\n\e[0m", 2);
 		exit(1);
@@ -73,11 +74,12 @@ void	*ft_add_to_alloc_lst_e(void *content)
 void ft_add_fd_to_alloc_lst_ie(int fd)
 {
 	t_list	**fd_lst;
-	int		*fd;
+	int		*fd_pointer;
 
 	if (fd < 0)
 		return ;
 	fd_lst = ft_get_alloc_lst(2);
-	fd = ft_alloc_lst(sizeof(int), 3);
-	ft_lstadd_back(fd_lst, ft_lstnew_ae(fd));
+	fd_pointer = ft_alloc_lst(sizeof(int), 3);
+	*fd_pointer = fd;
+	ft_lstadd_back(fd_lst, ft_lstnew_ae(fd_pointer));
 }

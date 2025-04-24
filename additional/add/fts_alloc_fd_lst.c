@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 17:06:26 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/24 00:08:10 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/24 19:45:31 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int	ft_open_fd_lst_ae(t_list **lst, char *path, int flags, ...)
 	*fd = open(path, flags, va_arg(args, int));
 	if (*fd == -1)
 	{
+		ft_exit_functions();
 		ft_dprintf(2, "\e[31mError\n\e[33m%s: Fail to open file\n\e[0m", path);
 		ft_alloc_clear();
 		exit(EXIT_FAILURE);

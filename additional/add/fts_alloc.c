@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 12:58:57 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/23 17:29:09 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/24 18:23:01 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ t_list	**ft_get_alloc_lst(int n_list)
 		return (&(alloc.alloc_lst));
 	else if (n_list == 2)
 		return (&(alloc.fd_lst));
-	else
-		return (0);
+	else if (n_list == 3)
+		return (&(alloc.exit_functions));
+	return (0);
 }
 
 void	*ft_alloc_clear(void)
