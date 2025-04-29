@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 17:33:50 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/24 19:25:34 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/29 20:49:18 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_exit_functions(void)
 {
 	t_list	**lstt;
 	t_list	*lst;
-	void 	(*f)(void);
+	void	(*f)(void);
 
 	lstt = ft_get_alloc_lst(3);
 	if (!lstt || !*lstt)

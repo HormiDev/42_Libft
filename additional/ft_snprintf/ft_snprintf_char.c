@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sprintf_char.c                                  :+:      :+:    :+:   */
+/*   ft_snprintf_char.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 21:13:18 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/29 16:29:38 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/29 20:25:58 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_sprintf.h"
+#include "ft_snprintf.h"
 
 void	ft_snprintf_char(char *str, int *len, char c)
 {

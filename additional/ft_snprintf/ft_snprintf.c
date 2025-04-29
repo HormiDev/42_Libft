@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 21:05:52 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/29 17:37:06 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/29 21:19:46 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,50 +16,51 @@
 #define HEXA_MIN "0123456789abcdef"
 #define DECIMAL "0123456789"
 
-static int	ft_conversion_2(char *str, int *len, const char *format,
+static int	ft_conversion_2(char *str, int l_s[2], const char *format,
 				va_list varg)
 {
 	if (ft_strncmp_p(format, "%x", 2) == 0)
-		return (ft_snprintf_nbr_base_u(str, len, va_arg(varg, unsigned int),
+		return (ft_snprintf_nbr_base_u(str, l_s, va_arg(varg, unsigned int),
 				HEXA_MIN), 1);
 	else if (ft_strncmp_p(format, "%X", 2) == 0)
-		return (ft_snprintf_nbr_base_u(str, len, va_arg(varg, unsigned int),
+		return (ft_snprintf_nbr_base_u(str, l_s, va_arg(varg, unsigned int),
 				HEXA_MAX), 1);
 	else if (ft_strncmp_p(format, "%%", 2) == 0)
-		return (ft_snprintf_char(str, len, '%'), 1);
+		return (ft_snprintf_char(str, &l_s[0], '%'), 1);
 	else if (ft_strncmp_p(format, "%ld", 3) == 0)
-		return (ft_snprintf_nbr_base(str, len, va_arg(varg, long), DECIMAL), 2);
+		return (ft_snprintf_nbr_base(str, l_s, va_arg(varg, long), DECIMAL), 2);
 	else
 		return (1);
 }
 
-static int	ft_conversion(char *str, int *len, int size, const char *format, va_list varg)
+static int	ft_conversion(char *str, int l_s[2], const char *format,
+				va_list varg)
 {
 	void	*p;
 
 	if (ft_strncmp_p(format, "%c", 2) == 0)
-		return (ft_snprintf_char(str, len, va_arg(varg, int)), 1);
+		return (ft_snprintf_char(str, &l_s[0], va_arg(varg, int)), 1);
 	else if (ft_strncmp_p(format, "%s", 2) == 0)
-		return (ft_snprintf_str(str, len, size, va_arg(varg, char *)), 1);
+		return (ft_snprintf_str(str, l_s, va_arg(varg, char *)), 1);
 	else if (ft_strncmp_p(format, "%p", 2) == 0)
 	{
 		p = va_arg(varg, void *);
 		if (p == 0)
-			ft_snprintf_str(str, len, "(nil)");
+			ft_snprintf_str(str, l_s, "(nil)");
 		else
 		{
-			ft_snprintf_str(str, len, "0x");
-			ft_snprintf_nbr_base_u(str, len, (unsigned long)p, HEXA_MIN);
+			ft_snprintf_str(str, l_s, "0x");
+			ft_snprintf_nbr_base_u(str, l_s, (unsigned long)p, HEXA_MIN);
 		}
 		return (1);
 	}
 	else if (ft_strncmp_p(format, "%u", 2) == 0)
-		return (ft_snprintf_nbr_base(str, len, va_arg(varg, unsigned int),
+		return (ft_snprintf_nbr_base(str, l_s, va_arg(varg, unsigned int),
 				DECIMAL), 1);
 	else if (ft_strncmp_p(format, "%d", 2) == 0
 		|| ft_strncmp_p(format, "%i", 2) == 0)
-		return (ft_snprintf_nbr_base(str, len, va_arg(varg, int), DECIMAL), 1);
-	return (ft_conversion_2(str, len, format, varg));
+		return (ft_snprintf_nbr_base(str, l_s, va_arg(varg, int), DECIMAL), 1);
+	return (ft_conversion_2(str, l_s, format, varg));
 }
 
 /**
@@ -92,29 +93,28 @@ static int	ft_conversion(char *str, int *len, int size, const char *format, va_l
 int	ft_snprintf(char *str, size_t size, const char *format, ...)
 {
 	int		i;
-	int		len;
-	int		size_int;
+	int		len_size[2];
 	va_list	varg;
 
 	if (size > 2147483647)
-		size_int = 2147483647;
+		len_size[1] = 2147483647;
 	else
-		size_int = (int)size;
+		len_size[1] = (int)size;
 	va_start(varg, format);
 	i = 0;
-	len = 0;
-	while (format[i] != 0 && len < size_int - 1)
+	len_size[0] = 0;
+	while (format[i] != 0 && len_size[0] < len_size[1] - 1)
 	{
 		if (format[i] == '%')
-			i += ft_conversion(str, &len, size_int, &format[i], varg);
+			i += ft_conversion(str, len_size, &format[i], varg);
 		else
 		{
-			str[len] = format[i];
-			len++;
+			str[len_size[0]] = format[i];
+			len_size[0]++;
 		}
 		i++;
 	}
-	str[len] = 0;
+	str[len_size[0]] = 0;
 	va_end(varg);
-	return (len);
+	return (len_size[0]);
 }

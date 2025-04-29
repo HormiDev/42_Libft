@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 19:44:16 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/24 19:46:20 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2025/04/29 20:50:02 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	*ft_add_to_alloc_lst_e(void *content)
  * @note En caso de error, libera la memoria de la lista y retorna `NULL`.
  * @note La lista enlazada `alloc_lst` se crea si no existe.
  */
-void ft_add_fd_to_alloc_lst_ie(int fd)
+void	ft_add_fd_to_alloc_lst_ie(int fd)
 {
 	t_list	**fd_lst;
 	int		*fd_pointer;
