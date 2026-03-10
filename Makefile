@@ -6,7 +6,7 @@
 #    By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2025/04/29 20:24:30 by ide-dieg         ###   ########.fr        #
+#    Updated: 2026/03/10 16:48:48 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -138,6 +138,26 @@ SRC_ADDITIONAL =	additional/42_ft_printf/ft_strlen_int.c \
 					additional/ft_snprintf/ft_snprintf_nbr_base_u.c \
 					additional/ft_snprintf/ft_snprintf.c \
 
+SRC_HD_ALLOC =	HD_alloc/hd_alloc.c \
+				HD_alloc/hd_alloc_error_func_c.c \
+				HD_alloc/hd_calloc.c \
+				HD_alloc/hd_u_add_last_hd_alloc_list.c \
+				HD_alloc/hd_u_get_hd_alloc_list_prev_node.c \
+				HD_alloc/hd_alloc_clear.c \
+				HD_alloc/hd_alloc_error_func_d.c \
+				HD_alloc/hd_free.c \
+				HD_alloc/hd_u_alloc_init.c \
+				HD_alloc/hd_u_get_last_hd_alloc_list.c \
+				HD_alloc/hd_alloc_error_func_a.c \
+				HD_alloc/hd_alloc_set_error_func.c \
+				HD_alloc/hd_malloc.c \
+				HD_alloc/hd_u_free_hd_alloc_list_node.c \
+				HD_alloc/hd_u_new_hd_alloc_list.c \
+				HD_alloc/hd_alloc_error_func_b.c \
+				HD_alloc/hd_alloc_set_error_ptr.c \
+				HD_alloc/hd_u_add_front_hd_alloc_list.c \
+				HD_alloc/hd_u_get_alloc.c
+
 # Regla para compilar los archivos fuente
 %.o: %.c
 	@if [ ! -f $(NAME) ]; then \
@@ -154,10 +174,13 @@ OBJ_BONUS = $(SRC_BONUS:.c=.o)
 # Objetos generados a partir de los archivos fuente adicionales
 OBJ_ADDITIONAL = $(SRC_ADDITIONAL:.c=.o)
 
+# Objetos generados a partir de los archivos fuente de la parte HD_alloc
+OBJ_HD_ALLOC = $(SRC_HD_ALLOC:.c=.o)
+
 # Regla por defecto
-all: ide-dieg libft_title $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL)
+all: ide-dieg libft_title $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL) $(OBJ_HD_ALLOC)
 	@if [ ! -f $(NAME) ]; then \
-		$(AR) $(ARFLAGS) $(NAME) $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL); \
+		$(AR) $(ARFLAGS) $(NAME) $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL) $(OBJ_HD_ALLOC); \
 		ranlib $(NAME); \
 		echo "$(NAME) compiled"; \
 	else \
@@ -186,12 +209,12 @@ bonus: ide-dieg libft_title $(OBJ_BONUS)
 
 # Regla para compilar los archivos fuente adicionales
 clean:
-	@rm -f $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL)
+	@rm -f $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL) $(OBJ_HD_ALLOC)
 	@echo "Objects removed"
 
 # Regla para eliminar los archivos objeto y el archivo de salida
 fclean:
-	@rm -f $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL) $(NAME)
+	@rm -f $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL) $(OBJ_HD_ALLOC) $(NAME)
 	@echo "Objects and $(NAME) removed"
 
 # Regla para recompilar todo

@@ -1,0 +1,3 @@
+[submodule "HD_alloc"]
+	path = HD_alloc
+	url = https://github.com/HormiDev/HD_alloc.git

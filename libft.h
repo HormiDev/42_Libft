@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:02:07 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/05/07 02:38:09 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2026/03/04 00:38:11 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include "additional/ft_dprintf/ft_dprintf.h"
 # include "additional/ft_snprintf/ft_snprintf.h"
 # include "additional/colors/colors.h"
+# include "HD_alloc/hd_alloc.h"
 
 typedef struct s_list
 {
