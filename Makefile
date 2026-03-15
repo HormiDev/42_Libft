@@ -6,7 +6,7 @@
 #    By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2026/03/15 16:29:41 by ide-dieg         ###   ########.fr        #
+#    Updated: 2026/03/15 18:06:13 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -180,7 +180,7 @@ OBJ_ADDITIONAL = $(SRC_ADDITIONAL:.c=.o)
 OBJ_HD_ALLOC = $(SRC_HD_ALLOC:.c=.o)
 
 # Regla por defecto
-all: ide-dieg libft_title $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL) $(OBJ_HD_ALLOC)
+all: ide-dieg libft_title update_submodules $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL) $(OBJ_HD_ALLOC)
 	@if [ ! -f $(NAME) ]; then \
 		$(AR) $(ARFLAGS) $(NAME) $(OBJ) $(OBJ_BONUS) $(OBJ_ADDITIONAL) $(OBJ_HD_ALLOC); \
 		ranlib $(NAME); \
@@ -227,6 +227,13 @@ rebonus: fclean bonus
 
 # Regla para recompilar los archivos fuente adicionales
 re$(NAME): fclean $(NAME)
+
+update_submodules:
+	@echo "$(NARANJA)Updating submodules...$(NC)"
+	@git submodule update --init --recursive > /dev/null 2>&1
+	@tput cuu1 && tput el
+	@echo "$(VERDE)Submodules updated!$(NC)"
+
 
 ROJO = \033[0;31m
 NC = \033[0m
