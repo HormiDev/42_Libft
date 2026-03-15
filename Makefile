@@ -6,7 +6,7 @@
 #    By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/25 16:43:30 by ide-dieg          #+#    #+#              #
-#    Updated: 2026/03/10 16:48:48 by ide-dieg         ###   ########.fr        #
+#    Updated: 2026/03/15 16:29:41 by ide-dieg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -156,7 +156,9 @@ SRC_HD_ALLOC =	HD_alloc/hd_alloc.c \
 				HD_alloc/hd_alloc_error_func_b.c \
 				HD_alloc/hd_alloc_set_error_ptr.c \
 				HD_alloc/hd_u_add_front_hd_alloc_list.c \
-				HD_alloc/hd_u_get_alloc.c
+				HD_alloc/hd_u_get_alloc.c \
+				HD_alloc/hd_open.c \
+				HD_alloc/hd_fork.c
 
 # Regla para compilar los archivos fuente
 %.o: %.c
