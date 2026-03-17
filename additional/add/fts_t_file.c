@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fts_t_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ide-dieg <ide-dieg@student.42madrid>       +#+  +:+       +#+        */
+/*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 02:16:14 by ide-dieg          #+#    #+#             */
-/*   Updated: 2024/09/24 22:14:51 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2026/03/17 23:53:19 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ t_file	*ft_create_file_from_fd(int fd)
 	file->array_content = ft_strlist_to_array(file->list_content);
 	if (!file->array_content)
 	{
-		ft_file_clear(&file);
+		ft_file_clear(file);
 		return (0);
 	}
 	return (file);
@@ -92,21 +92,21 @@ t_file	*ft_create_file_from_fd(int fd)
  * Esta función libera toda la memoria asociada con un `t_file`
  * y establece el puntero de la `t_file` a NULL.
  *
- * @param lst Doble puntero a la lista de archivos (t_file) que se va a 
- * limpiar.
+ * @param file puntero a la estructura de archivo que se va a limpiar.
  *
  * La función recorre la lista, libera la memoria de cada cadena y de cada nodo,
  * y finalmente establece el puntero de la lista a NULL para evitar accesos 
  * posteriores a memoria liberada.
  */
-void	ft_file_clear(t_file **lst)
+void	ft_file_clear(t_file *file)
 {
-	if (!lst || !*lst)
+	if (!file)
 		return ;
-	ft_strlist_clear(&(*lst)->list_content);
-	free((*lst)->array_content);
-	free(*lst);
-	*lst = 0;
+	ft_strlist_clear(file->list_content);
+	if (file->array_content)
+		free(file->array_content);
+	free(file);
+	file = 0;
 }
 
 /**
@@ -156,7 +156,7 @@ t_file	*ft_file_dup(t_file *old_file)
 	new_file->array_content = ft_strlist_to_array(new_file->list_content);
 	if (!new_file->array_content)
 	{
-		ft_file_clear(&new_file);
+		ft_file_clear(new_file);
 		return (0);
 	}
 	return (new_file);

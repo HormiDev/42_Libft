@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:06:19 by ide-dieg          #+#    #+#             */
-/*   Updated: 2025/04/24 19:00:11 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2026/03/17 23:51:39 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ char		*ft_ltoa(long n);
 
 t_file		*ft_create_file_from_filename(char *filename);
 t_file		*ft_create_file_from_fd(int fd);
-void		ft_file_clear(t_file **lst);
-void		ft_file_print(t_file *lst);
+void		ft_file_clear(t_file *file);
+void		ft_file_print(t_file *file);
 t_file		*ft_file_dup(t_file *old_file);
 
 char		**ft_create_str_rectangular_array(int x, int y);
