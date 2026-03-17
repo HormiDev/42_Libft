@@ -6,7 +6,7 @@
 /*   By: ide-dieg <ide-dieg@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 02:16:14 by ide-dieg          #+#    #+#             */
-/*   Updated: 2026/03/17 23:53:19 by ide-dieg         ###   ########.fr       */
+/*   Updated: 2026/03/17 23:58:24 by ide-dieg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	ft_file_clear(t_file *file)
 {
 	if (!file)
 		return ;
-	ft_strlist_clear(file->list_content);
+	ft_strlist_clear(&file->list_content);
 	if (file->array_content)
 		free(file->array_content);
 	free(file);
